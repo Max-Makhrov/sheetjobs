@@ -4,7 +4,7 @@
 */
 
 var C_RANGE_EVAL = 'eval';
-var C_FILE_TRIGGER_ID = 'YOUR_FILE_ID';  // Put your file id here!
+var C_FILE_TRIGGER_ID = '19S99lxdE2djjop3n_PpB0g31bWh0COZ81VUgmjkWXnY';  // Put your file id here!
 
 
 // Declare
@@ -15,18 +15,19 @@ var STR_DELIMEER2; // delim2
 // get settings from named range
 function getSettings_(getAgain)
 {
-   
+  
   if ( typeof STR_DELIMEER1 !== 'undefined' && !getAgain) { return -1; }
   
-  var range = SpreadsheetApp.openById(C_FILE_TRIGGER_ID).getRangeByName(C_RANGE_EVAL);    
-  var value = range.getValue();
-  var data = JSON.parse(value);
+  // get data
+  var file = SpreadsheetApp.openById(C_FILE_TRIGGER_ID);
+  var key = 'bom-bom-bom'
+  var data = file.getRange(file.getRangeByName(C_RANGE_EVAL).getValue()).getValues().join(key).split(key);
   
-
-// Assign
-STR_DELIMEER1 = data[0];
-STR_DELIMEER2 = data[1];
-
+  
+  // Assign
+  STR_DELIMEER1 = data[0];
+  STR_DELIMEER2 = data[1];
+  
   
   return 0;
 }
@@ -36,5 +37,6 @@ function test_getSettings()
 {
   Logger.log(getSettings_());     //  0
   Logger.log(getSettings_());     // -1
-  Logger.log(getSettings_(true)); //  0    
+  Logger.log(getSettings_(true)); //  0  
+  Logger.log(STR_DELIMEER1);      // ;
 }
