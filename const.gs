@@ -1,6 +1,11 @@
 /*
   Based on template: 
   https://docs.google.com/spreadsheets/d/19S99lxdE2djjop3n_PpB0g31bWh0COZ81VUgmjkWXnY/
+  
+  Sample formula for the named range "Ini":
+  =ADDRESS(ROW(D3),COLUMN(D3),4,,"_Ini_")&":"&ADDRESS(MAX(FILTER(ROW(D:D),D:D<>"")),COLUMN(D3),4)
+    D3 - first row with data
+    D - column with data
 */
 
 var C_RANGE_EVAL = 'eval';
