@@ -25,10 +25,8 @@ function getSettings_(getAgain)
   
   // get data
   var file = SpreadsheetApp.openById(C_FILE_TRIGGER_ID);
-  var key = 'bom-bom-bom'
-  var data = file.getRange(file.getRangeByName(C_RANGE_EVAL).getValue()).getValues().join(key).split(key);
-  
-  
+  var data = file.getRange(file.getRangeByName(C_RANGE_EVAL).getValue()).getValues().join().split(","); 
+
   // Assign
   STR_DELIMEER1 = data[0];
   STR_DELIMEER2 = data[1];
@@ -40,8 +38,14 @@ function getSettings_(getAgain)
 
 function test_getSettings()
 {
+  var t = new Date();
+  
   Logger.log(getSettings_());     //  0
   Logger.log(getSettings_());     // -1
   Logger.log(getSettings_(true)); //  0  
   Logger.log(STR_DELIMEER1);      // ;
+  Logger.log(STR_DELIMEER2);      // ~
+  
+  
+  Logger.log('Time to get sets = ' + (new Date() - t) + ' ms.'); //  Time to get sets = 481 ms.
 }
