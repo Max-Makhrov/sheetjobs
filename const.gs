@@ -25,11 +25,11 @@ function getSettings_(getAgain)
   
   // get data
   var file = SpreadsheetApp.openById(C_FILE_TRIGGER_ID);
-  var data = file.getRange(file.getRangeByName(C_RANGE_EVAL).getValue()).getValues().join().split(","); 
+  var data = file.getRange(file.getRangeByName(C_RANGE_EVAL).getValue()).getValues(); 
 
   // Assign
-  STR_DELIMEER1 = data[0];
-  STR_DELIMEER2 = data[1];
+  STR_DELIMEER1 = data[0][0];
+  STR_DELIMEER2 = data[1][0];
   
   
   return 0;
