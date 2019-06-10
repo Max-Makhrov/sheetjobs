@@ -1,19 +1,27 @@
-// file sample is here: https://docs.google.com/spreadsheets/d/1b55qnMP1QfqQ1xLR-ooafV-k4Hpj8BbQvrrDBo313B0
-
-function runEmails_test1()
+// copy sample file: https://docs.google.com/spreadsheets/d/1b55qnMP1QfqQ1xLR-ooafV-k4Hpj8BbQvrrDBo313B0/copy
+function test_Emailer()
 {
-  runEmails_('1;2'); // ids --- '1;2;3'
+  var t = new Date();
+  var ids = false; // use "1;2;3" to copy certain task ids 
+  var res = runEmails_(ids);
+  Logger.log(res);
+  Logger.log('Time to run the script = ' + (new Date() -t) + ' ms.');
 }
+
+
 
 
 function runEmails_(ids) {
   getSettings_();
-  var allids = STR_IDS_EMAILER.split(STR_DELIMEER2);
-  var allemails = STR_EMAILS_EMAILER.split(STR_DELIMEER2);
-  var alltitles = STR_TITLES_EMAILER.split(STR_DELIMEER2);
-  var allmsgs = STR_HTMLS_EMAILER.split(STR_DELIMEER2);
+  var d1 = CCC_.STR_DELIMEER1;
+  var d2 = CCC_.STR_DELIMEER2;
+  var allids = CCC_.STR_IDS_EMAILER.split(d2);
+  var allemails = CCC_.STR_EMAILS_EMAILER.split(d2);
+  var alltitles = CCC_.STR_TITLES_EMAILER.split(d2);
+  var allmsgs = CCC_.STR_HTMLS_EMAILER.split(d2);
       
-  var idslist = ids.split(STR_DELIMEER1);
+  if (ids) { var idslist = ids.split(d1); }
+  else { idslist = allids; }
   var id = -1, index;
   
   for (var i = 0, l = idslist.length; i < l; i++)
@@ -25,7 +33,7 @@ function runEmails_(ids) {
     {
       var emailer = 
           {
-            emails: allemails[index].split(STR_DELIMEER1),
+            emails: allemails[index].split(d1),
             title: alltitles[index],
             msg: allmsgs[index]
           };
