@@ -5,11 +5,12 @@ How to use:
 1. Copy the sample file
 2. Use it!
 
-How it works
+How it works:
 
 All files have the same sheet with settings called \\\_ini_/. All settings are stored in this sheet. 
 
 All files have also the same script file called [\_Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs). It gets all settings for the script.
+
 
 #SheetJobs is a template for doing routine tasks in Goolge Sheets, Docs, Slides. Use one of the following samples.
 
