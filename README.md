@@ -2,7 +2,10 @@
 
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+<a name="overview"></a>
 
+<a name="top"></a>
+[![MIT License](https://img.shields.io/badge/copy-sample%20file-green)](LICENSE)
 <a name="overview"></a>
 
 Jobs is a Goole Spreadsheet file with the script for automating tasks 
