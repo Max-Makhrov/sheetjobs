@@ -3,11 +3,13 @@
 <a name="overview"></a>
 
 # Jobs
-<p align="center">
+<p align="left">
     <a href="https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy" alt="Copy Sample Google Spreadsheet File">
         <img src="https://img.shields.io/badge/copy-sample%20file-green" /></a>
-
-
+    <a href="https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/" alt="Copy Sample Google Spreadsheet File">
+        <img src="https://img.shields.io/badge/article-about-blue" /></a>
+     <a href="https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/" alt="Copy Sample Google Spreadsheet File">
+        <img src="https://img.shields.io/badge/article-usage-blue" /></a>   
 
 
 </p>
@@ -19,8 +21,8 @@ Languages: Google-Apps-Script, JavaScript.
 
 Main links:
 1. [Copy Jobs]()
-2. [How to use Jobs](https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/)
-3. [General info](https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/)
+2. [How to use Jobs]()
+3. [General info]()
 4. [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about file [Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
 
 
