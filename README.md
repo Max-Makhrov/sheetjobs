@@ -5,7 +5,7 @@
 # Jobs
 <p>
 <a name="top"></a>
-[![MIT License](https://img.shields.io/badge/copy-sample%20file-green)](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
+[![Copy sample](https://img.shields.io/badge/copy-sample%20file-green)](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
 <a name="overview"></a>
   
   
