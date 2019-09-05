@@ -3,13 +3,16 @@
 <a name="overview"></a>
 
 # Jobs
-<p>
-
+<p align="center">
     <a href="https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy" alt="Copy Sample Google Spreadsheet File">
         <img src="https://img.shields.io/badge/copy-sample%20file-green" /></a>
-  
-  
+
+
+
+
 </p>
+
+
 
 Jobs is a Goole Spreadsheet file with the script for automating tasks 
 Languages: Google-Apps-Script, JavaScript.
