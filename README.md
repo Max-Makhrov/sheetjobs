@@ -1,18 +1,21 @@
-# Jobs
-
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 
+# Jobs
+<p>
 <a name="top"></a>
-[![MIT License](https://img.shields.io/badge/copy-sample%20file-green)](LICENSE)
+[![MIT License](https://img.shields.io/badge/copy-sample%20file-green)](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
 <a name="overview"></a>
+  
+  
+</p>
 
 Jobs is a Goole Spreadsheet file with the script for automating tasks 
 Languages: Google-Apps-Script, JavaScript.
 
 Main links:
-1. [Copy Jobs](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
+1. [Copy Jobs]()
 2. [How to use Jobs](https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/)
 3. [General info](https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/)
 4. [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about file [Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
