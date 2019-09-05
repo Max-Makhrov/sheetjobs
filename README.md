@@ -6,7 +6,7 @@ Main links:
 1. [Copy Jobs](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
 2. [How to use Jobs](https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/)
 3. [General info](https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/)
-4. [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about file [\ Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
+4. [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about file [Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
 
 
 ## Archive samples (will migrate to Jobs):
