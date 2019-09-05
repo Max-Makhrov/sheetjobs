@@ -1,5 +1,6 @@
 # Jobs
-Jobs is a Goole Spreadsheet file with the script for automating tasks with Google-Apps-Script.
+Jobs is a Goole Spreadsheet file with the script for automating tasks 
+Languages: Google-Apps-Script, JavaScript.
 
 Main links:
 1. [Copy Jobs](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
@@ -8,9 +9,9 @@ Main links:
 4. [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about file [\ Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
 
 
-Archive samples (will migrate to Jobs):
+## Archive samples (will migrate to Jobs):
 
-## Files & Folders
+### Files & Folders
 [**FolderFiles**](https://github.com/Max-Makhrov/sheetjobs/blob/master/archive/FolderFiles.gs)
 Create a list of all files from selected folders.
 
@@ -20,7 +21,7 @@ Copy files to a selected folder.
 [**FolderMaker**](https://github.com/Max-Makhrov/sheetjobs/blob/master/archive/FolderMaker.gs)
 Create new folders.
 
-## Sheets & Ranges
+### Sheets & Ranges
 
 [**RangeCopier**](https://github.com/Max-Makhrov/sheetjobs/blob/master/archive/RangeCopier.gs)
 Copy ranges to custom ranges, sheets, and files.
@@ -34,6 +35,6 @@ Delete multiple sheets.
 [**TeplatesCopier**](https://github.com/Max-Makhrov/sheetjobs/blob/master/archive/TemplatesCopier.gs)
 Create custom reports. Copy own template, rename it, set it to show different data.
 
-## Other
+### Other
 [**Emailer**](https://github.com/Max-Makhrov/sheetjobs/blob/master/archive/Emailer.gs)
 Send custom emails
