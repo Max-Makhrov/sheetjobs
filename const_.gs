@@ -19,7 +19,8 @@ function getSettings_(getAgain)
   else
   {
     var file = SpreadsheetApp.openById(C_FILE_TRIGGER_ID);
-  }  
+  }
+  CCC_.this_file = file;  
   var sheet = file.getSheetByName(C_SHEET_EVAL);
   var range = sheet.getRange(C_RANGE_VALS);
   var data = range.getValues();  
@@ -38,7 +39,7 @@ function test_getSettings()
   Logger.log(getSettings_());      //  0
   Logger.log(getSettings_());      // -1
   Logger.log(getSettings_(true));  //  0  
-  Logger.log(CCC_[C_DELIMETER1_NAME]); // ; 
+  Logger.log(JSON.stringify(CCC_)); // ; {"STR_DELIMEER1":";","STR_DELIMEER2":"~","":""} 
   
   var t2 = new Date();
   Logger.log('Time to get sets = ' + (t2 - t) + ' ms.');                      //  ~59 ms.
