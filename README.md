@@ -7,9 +7,9 @@
     <a href="https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy" alt="Copy Sample Google Spreadsheet File">
         <img src="https://img.shields.io/badge/copy-sample%20file-green" /></a>
     <a href="https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/" alt="Copy Sample Google Spreadsheet File">
-        <img src="https://img.shields.io/badge/article-about-blue" /></a>
+        <img src="https://img.shields.io/badge/article-about-brightgreen" /></a>
      <a href="https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/" alt="Copy Sample Google Spreadsheet File">
-        <img src="https://img.shields.io/badge/article-usage-blue" /></a>   
+        <img src="https://img.shields.io/badge/article-usage-brightgreen" /></a>   
 
 
 </p>
