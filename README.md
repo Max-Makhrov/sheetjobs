@@ -143,7 +143,7 @@ Full list of Jobs functions
 Creates a copy of Spreadsheets with settings. 
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|Smith|The name of copied report. The copied file has a cell with changed parameter. The script changes this cell content  |
+|Option1|Smith|The name of a copied report. The copied file has a cell with changed parameter. The script changes this cell content  |
 
 ## Archive samples (will migrate to Jobs):
 
@@ -181,5 +181,5 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIzNDk5Ml19
+eyJoaXN0b3J5IjpbLTE1Nzc4Njc2MzNdfQ==
 -->
