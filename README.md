@@ -78,13 +78,13 @@ All settings are in the sheet \_Jobs\_:
 |Sheet Name|The name of a sheet.|basic|The left-most sheet in a file: [`File.getSheets[0]`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#getsheets).
 |Range-A1|A range address in A1-Notation|basic|A range with data: [`sheet.getDataRange()`](https://developers.google.com/apps-script/reference/spreadsheet/sheet#getdatarange)
 |Range Type|3 options: `range only`, `range and columns behind`, `range up to the end of sheet`|basic|`range only`|
-|Operation|The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs.|special[^2]|-|
+|Operation|The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs.|special<sup id="a2">[1](#f2)</sup>|-|
 |Option1, Option2, Option3|Contains any text depending on the script settings.|special|-|
 |Tag|The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag.|basic|-|
 
-1. <small id="f1"> Options are the same for all tasks.  </small> [↩](#a1)
-[^1]: 
-[^2]: options differs for different tasks
+ <small id="f1">1. *basic* options are the same for all tasks.  </small> [↩](#a1)
+ <small id="f2">2. *special* options differs for different tasks.  </small> [↩](#a2)
+[^2]: 
 
 ## Jobs Script
 To see the script, in Jobs file go to menu: Tools > Script Editor.
@@ -185,5 +185,5 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNTg1NTMyNywtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbMTM1NDQzOTA0OSwtMzExMDE2ODIzXX0=
 -->
