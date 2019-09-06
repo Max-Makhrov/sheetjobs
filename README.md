@@ -1,7 +1,3 @@
-<a name="top"></a>
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-<a name="overview"></a>
-
 # Jobs
 <p align="left">
     <a href="https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy" alt="Copy Sample Google Spreadsheet File">
@@ -19,11 +15,24 @@
 Jobs is a Goole Spreadsheet file with the script for automating tasks 
 Languages: Google-Apps-Script, JavaScript.
 
-Main links:
+More info about Jobs:
 1. [Copy Jobs]()
 2. [How to use Jobs]()
 3. [General info]()
 4. [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about file [Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
+
+
+## File structure
+The file contains of 3 sheets:
+
+![Jobs sheets](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs-sheets.png)
+
+
+|Sheet Name|Description|
+|--|--|
+|\_Jobs_Promo\_|Introductory sheet. This sheet is not used by script or any dependent formulas.|
+|\_Jobs\_|Sheet with settings — main sheet of Jobs.|
+|\_ini\_|Technical sheet. Used by script to get variables.|
 
 
 ## Archive samples (will migrate to Jobs):
@@ -55,3 +64,10 @@ Create custom reports. Copy own template, rename it, set it to show different da
 ### Other
 [**Emailer**](https://github.com/Max-Makhrov/sheetjobs/blob/master/archive/Emailer.gs)
 Send custom emails
+
+
+## Lisense
+
+<a name="top"></a>
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+<a name="overview"></a>
