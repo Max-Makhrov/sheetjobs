@@ -157,7 +157,7 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`data_mastrer`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1];`|
 |Option2|`data_filtered`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2] = data_out;`|
-|Option3|`Col3~Smith`|2 parameters delimited by `~`: |
+|Option3|`Col3~Smith`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 
 
 ## Archive samples (will migrate to Jobs):
@@ -196,7 +196,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNjYxMDQxMywxOTY5Mjg3MTEsMTg4MD
-E3MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgs
-MTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbMjQzMDk0MDM4LDE5NjkyODcxMSwxODgwMT
+cxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwx
+MDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
 -->
