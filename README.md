@@ -141,14 +141,14 @@ Full list of Jobs functions
 ### logValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|myVar|The key (name) of variable|
+|Option1|myVar|The key (name) of variable: `Logger.log(CCC_REM[Option1]);`|
 
 ### copyByTemplate_
 Creates a copy of Spreadsheets with settings. 
 
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`Smith`|The copied file has a cell with changed parameter. The script changes this cell content to Option1-value: `range.setValue(Option1);`. The script also uses it in the new file's name: `newFileName = prefix + name + posrfix;`|
+|Option1|`Smith`|The copied file has a cell with changed parameter. The script changes this cell content to Option1-value: `range.setValue(Option1);`. The script also uses it in the new file's name: `copy.setName(prefix + Option1 + postfix);`|
 |Option2|`1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6~Report_~_created by Jobs`|3 parameters delimited by `~`: folder ID, file's name prefix, file's name postfix. Folder ID = the ID od ditination folder. The script will create new file in this folder. Prefix and postfix are used for file naming.|
 |Option3|`Jardine_fileId`|The key (name) of variable. The script will put the file id into this key: `CCC_REM[Option3] = [[id]]; // save as 2d array`|
 
@@ -188,7 +188,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjYyNDY5OTgsMzQwMzAzMjQ5LC04NzgxMT
-E0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
-
+eyJoaXN0b3J5IjpbLTk3MjMzOTUzNiwzNDAzMDMyNDksLTg3OD
+ExMTQsLTEyNTQ1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIz
+XX0=
 -->
