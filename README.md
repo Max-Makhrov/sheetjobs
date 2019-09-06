@@ -82,6 +82,57 @@ All settings are in the sheet \_Jobs\_:
 |Option1, Option2, Option3|Contains any text depending on the script settings.|special|-|
 |Tag|The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag.|basic|-|
 
+## Jobs Script
+To see the script, in Jobs file go to menu: Tools > Script Editor.
+
+The basic usege is to run this code:
+
+    // Change tag /tags and run the function
+    // To run more then 1 tag, use semicolon as a delimeter: Clear Ranges;Log Values
+    function test_Jobs()
+    {
+      // Test Tags:
+      //   --------------------------------------------------------------------------
+      //   Clear Ranges     = clear values from selected 
+      //   Log Values       = run the code and open the log: [Ctrl]+[Enter] 
+      //   Copy Report      = create a copy of the given report-template
+      //   Fill Report      = fill the report with the portion of filtered data
+      //   --------------------------------------------------------------------------
+      run_JOBS_('Clear Ranges');    
+    }
+
+The core of Jobs functionality is using data. Data is stored in Google Sheets as 2-d arrays:
+
+    [
+     [value], [value],
+     [value], [value],
+     [value], [value]
+    ]
+↑ This sample data contains 2 columns and 3 rows.
+
+Here's how the script treats data:
+
+|Script option|Description|
+|-------------|-----------|
+|Save data|The script writes data to the global object `CCC_`. You set the `key` of variable. Script saves the data with this key: `CCC_[key] = data;`|
+|Get data|Use key to get the data: `CCC_[key]`. The code to log the data: `Logger.log(CCC_[key]);`. To see the log in Google-Script-Editor, press [Ctrl]+[Enter]|
+
+ ## Jobs Functions
+Full list of Jobs functions
+|Function name|Description|Options|
+|-------------|-----------|-------|
+|clearRangeContents_|Clears contents from selected range.|no|
+|rememberValues_|Remembers data from selected range. |[link](#rememberValues_)|
+|logValues_|Logs values from the memory og Google-Apps-Script.|link|
+|copyByTemplate_|Creates a copy of Spreadsheets with settings.|link|
+|filterByColumn_|Filters data by 1 column and remembers new filtered data.|link|
+|writeValues_|Writes data to a sheet|link|
+
+### rememberValues_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|myVar|The key (name) of variable|
+
 
 
 ## Archive samples (will migrate to Jobs):
@@ -119,3 +170,6 @@ Send custom emails
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzcyMTc3OTQyXX0=
+-->
