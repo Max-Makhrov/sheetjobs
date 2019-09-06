@@ -150,7 +150,7 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`Smith`|The name of a copied report. The copied file has a cell with changed parameter. The script changes this cell content. The script also uses it in the new file's name: `newFileName = prefix + name + posrfix;`|
 |Option2|`1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6~Report_~_created by Jobs`|3 parameters delimited by `~`: folder ID, file's name prefix, file's name postfix. Folder ID = the ID od ditination folder. The script will create new file in this folder. Prefix and postfix are used for file naming.|
-|Option3|`B33`|The cell address there to put the new file's ID. When the script creates |
+|Option3|`B33`|The cell address there to put the new file's ID. When the script creates new file, it needs to sa|
 
 ## Archive samples (will migrate to Jobs):
 
@@ -188,6 +188,6 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3ODExMTQsLTEyNTQ1MTEwOTgsMTAwNT
-MxNzMwMCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbMzQwMzAzMjQ5LC04NzgxMTE0LC0xMjU0NT
+ExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
 -->
