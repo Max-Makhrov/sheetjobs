@@ -170,7 +170,6 @@ function writeValues_(options)
         data: dataIn,
         row: range.getRow(),
         column: range.getColumn(),
-        isFreeRow: true,
         clearData: false 
       };
       
