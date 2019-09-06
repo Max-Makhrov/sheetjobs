@@ -129,9 +129,9 @@ Full list of Jobs functions
 |clearRangeContents_|Clears contents from selected range.|no|
 |rememberValues_|Remembers data from selected range. |[link](#rememberValues_)|
 |logValues_|Logs values from the memory og Google-Apps-Script.|[link](#logValues_)|
-|copyByTemplate_|Creates a copy of Spreadsheets with settings.|[link](copyByTemplate_)|
-|filterByColumn_|Filters data by 1 column and remembers new filtered data.|[link](f#ilterByColumn_)|
-|writeValues_|Writes data to a sheet|link|
+|copyByTemplate_|Creates a copy of Spreadsheets with settings.|[link](#copyByTemplate_)|
+|filterByColumn_|Filters data by 1 column and remembers new filtered data.|[link](#filterByColumn_)|
+|writeValues_|Writes data to a sheet|[link](#writeValues_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -156,13 +156,13 @@ Creates a copy of Spreadsheets with settings.
 |Column|Sample Value|Description|
 |--|--|--|
 |Option1|`data_mastrer`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1];`|
-|Option2|`data_filtered`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2] = data_out;`|
+|Option2|`data_Smith`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2] = data_out;`|
 |Option3|`Col3~Smith`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 
 ### writeValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`myVar`|The key (name) of variable. The script will log values from memory: `Logger.log(CCC_REM[Option1]);`|
+|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1];`. The s|
 
 ## Archive samples (will migrate to Jobs):
 
@@ -200,7 +200,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDQxODA2NTUsMTk2OTI4NzExLDE4OD
+eyJoaXN0b3J5IjpbLTEzOTg2MTMzMDQsMTk2OTI4NzExLDE4OD
 AxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4
 LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
 -->
