@@ -145,6 +145,7 @@ Full list of Jobs functions
 
 ### copyByTemplate_
 Creates a copy of Spreadsheets with settings. 
+
 |Column|Sample Value|Description|
 |--|--|--|
 |Option1|Smith|The name of a copied report. The copied file has a cell with changed parameter. The script changes this cell content  |
@@ -185,5 +186,6 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbLTEyNTQ1MTEwOTgsMTAwNTMxNzMwMCwtMz
+ExMDE2ODIzXX0=
 -->
