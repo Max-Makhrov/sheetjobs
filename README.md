@@ -118,8 +118,8 @@ Here's how the script treats data:
 
 |Script option|Description|
 |-------------|-----------|
-|Save data|The script writes data to the global object `CCC_`. You set the `key` of variable. Script saves the data with this key: `CCC_[key] = data;`|
-|Get data|Use key to get the data: `CCC_[key]`. The code to log the data: `Logger.log(CCC_[key]);`. To see the log in Google-Script-Editor, press [Ctrl]+[Enter]|
+|Save data|The script writes data to the global object `CCC_REM`. You set the `key` of variable. Script saves the data with this key: `CCC_REM[key] = data;`|
+|Get data|Use key to get the data: `CCC_REM[key]`. The code to log the data: `Logger.log(CCC_REM[key]);`. To see the log in Google-Script-Editor, press [Ctrl]+[Enter]|
 
  ## Jobs Functions
 Full list of Jobs functions
@@ -150,7 +150,7 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`Smith`|The name of a copied report. The copied file has a cell with changed parameter. The script changes this cell content. The script also uses it in the new file's name: `newFileName = prefix + name + posrfix;`|
 |Option2|`1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6~Report_~_created by Jobs`|3 parameters delimited by `~`: folder ID, file's name prefix, file's name postfix. Folder ID = the ID od ditination folder. The script will create new file in this folder. Prefix and postfix are used for file naming.|
-|Option3|`B33`|The cell address there to put the new file's ID. When the script creates new file, it needs to sa|
+|Option3|`Jardine_fileId`|The key (name) of variable. The script will put the file id into this key: `CCC_REM[key] = [[id]]; // save as 2d array`|
 
 ## Archive samples (will migrate to Jobs):
 
@@ -188,6 +188,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQwMzAzMjQ5LC04NzgxMTE0LC0xMjU0NT
-ExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
+eyJoaXN0b3J5IjpbMjY1ODM3MTY4LDM0MDMwMzI0OSwtODc4MT
+ExNCwtMTI1NDUxMTA5OCwxMDA1MzE3MzAwLC0zMTEwMTY4MjNd
+fQ==
 -->
