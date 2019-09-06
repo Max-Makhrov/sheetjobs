@@ -73,16 +73,17 @@ All settings are in the sheet \_Jobs\_:
 
 |Column|Description|Type|Default|
 |-----------|-----------|----|--|
-|Task Id|The *unique* ID of a task. Use numbers `1, 2, 3`. Textual format of ids is also possible: `1a, 1b, my task`. CAUTION: use unique IDs only! 2 tasks with the same ID will run simultanously, which may cause errors.|basic[^1] (options are the same for all tasks)|-|
+|Task Id|The *unique* ID of a task. Use numbers `1, 2, 3`. Textual format of ids is also possible: `1a, 1b, my task`. CAUTION: use unique IDs only! 2 tasks with the same ID will run simultanously, which may cause errors.|basic[^1]|-|
 |File Id|Get file id from the browser URL: ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_fileid.png?w=676)  Or get file id from the script using [`File.GetId()`](https://developers.google.com/apps-script/reference/drive/file#getid) method.|basic|The file where whe script was executed: [`SpreadsheetApp.getActive()`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#getActive%28%29)|
 |Sheet Name|The name of a sheet.|basic|The left-most sheet in a file: [`File.getSheets[0]`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#getsheets).
 |Range-A1|A range address in A1-Notation|basic|A range with data: [`sheet.getDataRange()`](https://developers.google.com/apps-script/reference/spreadsheet/sheet#getdatarange)
 |Range Type|3 options: `range only`, `range and columns behind`, `range up to the end of sheet`|basic|`range only`|
-|Operation|The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs.|special (options differs for different tasks)|-|
+|Operation|The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs.|special[^2]|-|
 |Option1, Option2, Option3|Contains any text depending on the script settings.|special|-|
 |Tag|The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag.|basic|-|
 
-[^1] (options are the same for all tasks)
+[^1]: options are the same for all tasks
+[^2]: options differs for different tasks
 
 ## Jobs Script
 To see the script, in Jobs file go to menu: Tools > Script Editor.
@@ -183,5 +184,5 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQxMjIzMjQ3XX0=
+eyJoaXN0b3J5IjpbLTMxMTAxNjgyM119
 -->
