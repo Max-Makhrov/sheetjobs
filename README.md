@@ -162,7 +162,9 @@ Creates a copy of Spreadsheets with settings.
 ### writeValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1];`. The s|
+|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1];`. The script will write the data to selected range.|
+
+----
 
 ## Archive samples (will migrate to Jobs):
 
@@ -200,7 +202,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTg2MTMzMDQsMTk2OTI4NzExLDE4OD
-AxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4
-LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
+eyJoaXN0b3J5IjpbMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMT
+cxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwx
+MDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
 -->
