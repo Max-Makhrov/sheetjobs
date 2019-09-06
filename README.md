@@ -89,7 +89,7 @@ All settings are in the sheet \_Jobs\_:
 ## Jobs Script
 To see the script, in Jobs file go to menu: Tools > Script Editor.
 
-The basic usege is to run this code:
+The basic usage is to run this code:
 
     // Change tag /tags and run the function
     // To run more then 1 tag, use semicolon as a delimeter: Clear Ranges;Log Values
@@ -188,7 +188,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MDE3MTk3OSwzNDAzMDMyNDksLTg3OD
-ExMTQsLTEyNTQ1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIz
-XX0=
+eyJoaXN0b3J5IjpbMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMz
+AzMjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAs
+LTMxMTAxNjgyM119
 -->
