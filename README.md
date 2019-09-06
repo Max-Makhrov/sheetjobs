@@ -84,7 +84,6 @@ All settings are in the sheet \_Jobs\_:
 
  <small id="f1">1. *basic* options are the same for all tasks.  </small> [↩](#a1)
  <small id="f2">2. *special* options differs for different tasks.  </small> [↩](#a2)
-[^2]: 
 
 ## Jobs Script
 To see the script, in Jobs file go to menu: Tools > Script Editor.
@@ -185,5 +184,5 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NDQzOTA0OSwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbNDUyMjIyMTQ3LC0zMTEwMTY4MjNdfQ==
 -->
