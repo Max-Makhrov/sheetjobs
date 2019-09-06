@@ -124,7 +124,7 @@ Here's how the script treats data:
  ## Jobs Functions
 Full list of Jobs functions
 
-|Function name|Description|Options|
+|Operation|Description|Options|
 |-------------|-----------|-------|
 |clearRangeContents_|Clears contents from selected range.|no|
 |rememberValues_|Remembers data from selected range. |[link](#rememberValues_)|
@@ -188,7 +188,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMz
-AzMjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAs
-LTMxMTAxNjgyM119
+eyJoaXN0b3J5IjpbLTczNjQ4NjIyMSwxOTY5Mjg3MTEsMTg4MD
+E3MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgs
+MTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
 -->
