@@ -125,7 +125,7 @@ Full list of Jobs functions
 |clearRangeContents_|Clears contents from selected range.|no|
 |rememberValues_|Remembers data from selected range. |[link](#rememberValues_)|
 |logValues_|Logs values from the memory og Google-Apps-Script.|[link](#logValues_)|
-|copyByTemplate_|Creates a copy of Spreadsheets with settings.|link|
+|copyByTemplate_|Creates a copy of Spreadsheets with settings.|[link](copyByTemplate_)|
 |filterByColumn_|Filters data by 1 column and remembers new filtered data.|link|
 |writeValues_|Writes data to a sheet|link|
 
@@ -139,7 +139,10 @@ Full list of Jobs functions
 |--|--|--|
 |Option1|myVar|The key (name) of variable|
 
-
+### copyByTemplate_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|Smith|The optional name |
 
 ## Archive samples (will migrate to Jobs):
 
@@ -177,5 +180,5 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMjQ4NDQ0XX0=
+eyJoaXN0b3J5IjpbNjIxMTA4MjEyXX0=
 -->
