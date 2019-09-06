@@ -14,7 +14,7 @@ function test_Jobs()
   //   Copy Report      = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Clear Ranges');    
+  run_JOBS_('Copy Report');    
 }
 
 
@@ -93,9 +93,8 @@ function copyByTemplate_(options)
   var sName     = sheet.getName();   // Sets  
   var value     = options.option1;   // Jardine
   var option2   = options.option2;   // 1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6~Report_~_created by Jobs
-  var A1To      = options.option3;   // B32
+  var option3   = options.option3;   // Smith_fileId
   var d2        = options.d2;        // ~
-  var jobsSheet = options.jobsSheet; // [_Jobs_] = sheet object
   var options2  = option2.split(d2); // ['1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6', 'Report_', '_created by Jobs']
   var folderId  = options2[0];       // 1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6
   var replaceA1 = r.getA1Notation(); // B2
@@ -120,8 +119,8 @@ function copyByTemplate_(options)
     range.setValue(value);    
   }
     
-  var rTo = jobsSheet.getRange(A1To);
-  rTo.setValue(id);
+  // remember new created file id
+  CCC_REM[option3] = [[id]]; // save as 2d array
   
   return 0;
   
