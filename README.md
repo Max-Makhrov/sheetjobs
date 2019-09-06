@@ -136,12 +136,12 @@ Full list of Jobs functions
 ### rememberValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|myVar|The key (name) of variable|
+|Option1|myVar|The key (name) of variable. The script will remember values from selected range: `CCC_REM[Option1] = values;`|
 
 ### logValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|myVar|The key (name) of variable: `Logger.log(CCC_REM[Option1]);`|
+|Option1|myVar|The key (name) of variable. The script will log values from memory: `Logger.log(CCC_REM[Option1]);`|
 
 ### copyByTemplate_
 Creates a copy of Spreadsheets with settings. 
@@ -188,7 +188,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3MjMzOTUzNiwzNDAzMDMyNDksLTg3OD
-ExMTQsLTEyNTQ1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIz
-XX0=
+eyJoaXN0b3J5IjpbMTE3NjE5ODgsMzQwMzAzMjQ5LC04NzgxMT
+E0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
+
 -->
