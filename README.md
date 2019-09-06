@@ -59,6 +59,7 @@ Jobs is a Google Spreadhsheet file. The file contains of 3 sheets:
 ## Settings Jobs
 All settings are in the sheet \_Jobs\_:
 ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_allsets-1.png?w=676)
+
 ↑ Each line of settings represents one task for Jobs.
 
  The table below gives basic info about settings. 
