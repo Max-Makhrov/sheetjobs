@@ -132,7 +132,7 @@ Full list of Jobs functions
 |copyByTemplate_|Creates a copy of Spreadsheets with settings.|[link](#copyByTemplate_)|
 |filterByColumn_|Filters data by 1 column and remembers new filtered data.|[link](#filterByColumn_)|
 |writeValues_|Writes data to a sheet|[link](#writeValues_)|
-|createDataValidation_|Crea|[link](#writeValues_)|
+|createDataValidation_|Creates drop-down list in a range|[link](#createDataValidation_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -164,6 +164,11 @@ Creates a copy of Spreadsheets with settings.
 |Column|Sample Value|Description|
 |--|--|--|
 |Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1];`. The script will write the data to selected range.|
+
+### createDataValidation_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`'_cost-groups_'!A3:A1000`|The full adress of a range with data for validation. New rule wil.|
 
 ----
 
@@ -203,7 +208,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5NTkxNTU5OCwyNTczOTUwNTUsMTk2OT
-I4NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0x
-MjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
+eyJoaXN0b3J5IjpbLTY3OTc0MDcxLDI1NzM5NTA1NSwxOTY5Mj
+g3MTEsMTg4MDE3MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEy
+NTQ1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
 -->
