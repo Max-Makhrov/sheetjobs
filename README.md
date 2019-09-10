@@ -168,7 +168,7 @@ Creates a copy of Spreadsheets with settings.
 ### createDataValidation_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`'_cost-groups_'!A3:A1000`|The full A1-address of a range with data for validation. New validation rule will be created with this range as source: `validation.requireValueInRange(dv_range);`.|
+|Option1|`'_cost-groups_'!A3:A1000`|The full A1-address of a range with data for validation: `var dvrange = file.getRange(Option1);`. New validation rule will be created with this range as source: `validation.requireValueInRange(dv_range);`.|
 
 ----
 
@@ -208,7 +208,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjI4OTE5ODMsMjU3Mzk1MDU1LDE5Nj
+eyJoaXN0b3J5IjpbLTE1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5Nj
 kyODcxMSwxODgwMTcxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwt
 MTI1NDUxMTA5OCwxMDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
 -->
