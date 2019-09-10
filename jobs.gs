@@ -14,7 +14,7 @@ function test_Jobs()
   //   Copy Report      = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Copy Report');    
+  run_JOBS_('Выпадающие списки. Себестоимость > Рассчет');    
 }
 
 
@@ -176,6 +176,33 @@ function writeValues_(options)
   writeDataToSheet_(writer);
 
   return 0;  
+}
+
+function createDataValidation_(options)
+{
+  var range = options.range;
+  var option1 = options.option1; // '_cost-groups_'!E3:E1000
+  
+  // new validation
+  var validation = SpreadsheetApp.newDataValidation();
+  
+  if (option1)
+  {
+    // validation from range
+    var sheet = range.getSheet();
+    var file = sheet.getParent();
+    var dvrange = file.getRange(option1);
+    validation.requireValueInRange(dvrange);
+  }
+  else
+  {
+    return -1; // no range for validation 
+  }
+  
+  // set validation
+  range.setDataValidation(validation);
+  
+  return 0;    
 }
 
 
