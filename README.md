@@ -132,6 +132,7 @@ Full list of Jobs functions
 |copyByTemplate_|Creates a copy of Spreadsheets with settings.|[link](#copyByTemplate_)|
 |filterByColumn_|Filters data by 1 column and remembers new filtered data.|[link](#filterByColumn_)|
 |writeValues_|Writes data to a sheet|[link](#writeValues_)|
+|createDataValidation_|Crea|[link](#writeValues_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -202,7 +203,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMT
-cxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwx
-MDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbMTM5NTkxNTU5OCwyNTczOTUwNTUsMTk2OT
+I4NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0x
+MjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
 -->
