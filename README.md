@@ -126,13 +126,15 @@ Full list of Jobs functions
 
 |Operation|Description|Options|
 |-------------|-----------|-------|
-|clearRangeContents_|Clears contents from selected range.|no|
-|rememberValues_|Remembers data from selected range. |[link](#rememberValues_)|
-|logValues_|Logs values from the memory og Google-Apps-Script.|[link](#logValues_)|
+|clearRangeContents_|Clears contents from selected range|no|
+|rememberValues_|Remembers data from selected range |[link](#rememberValues_)|
+|logValues_|Logs values from the memory og Google-Apps-Script|[link](#logValues_)|
 |copyByTemplate_|Creates a copy of Spreadsheets with settings.|[link](#copyByTemplate_)|
 |filterByColumn_|Filters data by 1 column and remembers new filtered data.|[link](#filterByColumn_)|
 |writeValues_|Writes data to a sheet|[link](#writeValues_)|
 |createDataValidation_|Creates drop-down list in a range|[link](#createDataValidation_)|
+|groupRows_|Creates a new row group for selected range|no|
+|ungroupRows_|Clears all row groups in selected range|no|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -208,7 +210,8 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5Nj
-kyODcxMSwxODgwMTcxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwt
-MTI1NDUxMTA5OCwxMDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbLTgzMTExMTIzOCwtMTUzOTY2MDg3OSwyNT
+czOTUwNTUsMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5
+LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMT
+AxNjgyM119
 -->
