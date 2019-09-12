@@ -11,10 +11,10 @@ function test_Jobs()
   //   -----------------------------------------------------------------------------------------
   //   Clear Ranges     = clear values from selected 
   //   Log Values       = run the code and open the log: [Ctrl]+[Enter] 
-  //   Copy Report      = create a copy of the given report-template
+  //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Выпадающие списки. Себестоимость > Рассчет');    
+  run_JOBS_('Create Row Groups');    
 }
 
 
@@ -58,6 +58,12 @@ function run_JOBS_(s_tags)
 
 */
 var CCC_REM = {};
+
+function sayHello()
+{
+  Browser.msgBox('Hello!\\nHow can I help?');   
+}
+
 function clearRangeContents_(options)
 {
   var range = options.range;
@@ -178,6 +184,7 @@ function writeValues_(options)
   return 0;  
 }
 
+
 function createDataValidation_(options)
 {
   var range = options.range;
@@ -204,6 +211,48 @@ function createDataValidation_(options)
   
   return 0;    
 }
+
+
+function groupRows_(options) {
+  var range = options.range; 
+  range.shiftRowGroupDepth(1);
+  return 0;
+}
+
+
+function ungroupRows_(options) {
+  
+  var range = options.range; 
+  var rowIndex = range.getRow();
+  var sheet = range.getSheet();  
+  
+  // get the first group
+  try
+  {    
+    var group = sheet.getRowGroup(rowIndex, 1);
+  }
+  catch(e)
+  {
+    return -1; // no groups were foung    
+  }
+  
+  // loop groups
+  while (group) {
+    group.remove(); 
+    try
+    {
+      group = sheet.getRowGroup(rowIndex, 1);
+    }
+    catch(e)
+    {
+      group = false;
+    }    
+  }
+  
+  return 0;
+}
+
+
 
 
 /*
