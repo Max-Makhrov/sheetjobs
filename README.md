@@ -18,7 +18,7 @@ Jobs is a Goole Spreadsheet with the script for automating tasks.
  - [File structure](#Jobs-structure)
  - [Settings](#Settings-Jobs)
  - [Script](#Jobs-Script)
- - [Full list of functions]( #Jobs-Functions)
+ - [Full list of functions 📐]( #Jobs-Functions)
 
 ## Installation
 The simplest way is to [create your copy of Jobs](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy).
@@ -216,7 +216,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4MTk5OTU2OSwtODMxMTExMjM4LC0xNT
+eyJoaXN0b3J5IjpbLTU2NDQ0ODk0NCwtODMxMTExMjM4LC0xNT
 M5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3MTk3
 OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMTAwNT
 MxNzMwMCwtMzExMDE2ODIzXX0=
