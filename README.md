@@ -13,8 +13,8 @@
 
 Jobs is a Goole Spreadsheet with the script for automating tasks.
 
- - [Installation](##Installation)
- - [About](##About-Jobs)
+ - [Installation](#Installation)
+ - [About](#About-Jobs)
  - [File structure](##Jobs-structure)
  - [Settings](##Settings-Jobs)
  - [Script](##Jobs-Script)
@@ -216,7 +216,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjY5NDY1MTcsLTgzMTExMTIzOCwtMT
+eyJoaXN0b3J5IjpbLTE4MTUzNDUyMDcsLTgzMTExMTIzOCwtMT
 UzOTY2MDg3OSwyNTczOTUwNTUsMTk2OTI4NzExLDE4ODAxNzE5
 NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMD
 UzMTczMDAsLTMxMTAxNjgyM119
