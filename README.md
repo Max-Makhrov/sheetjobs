@@ -141,6 +141,8 @@ Full list of Jobs functions
 |createDataValidation_|Creates drop-down list in a range|[link](#createDataValidation_)|
 |groupRows_|Creates a new row group for selected range|no|
 |ungroupRows_|Clears all row groups in selected range|no|
+|sendGmail_|Clears all row groups in selected range|[link](#sendGmail_)|
+
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -177,6 +179,15 @@ Creates a copy of Spreadsheets with settings.
 |Column|Sample Value|Description|
 |--|--|--|
 |Option1|`'_cost-groups_'!A3:A1000`|The full A1-address of a range with data for validation: `var dvrange = file.getRange(Option1);`. New validation rule will be created with this range as source: `validation.requireValueInRange(dv_range);`.|
+
+
+### sendGmail_
+
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`test1@gmail.com;test2@gmail.com`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1];`|
+|Option2|`data_Smith`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2] = data_out;`|
+|Option3|`Col3~Smith`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 
 ----
 
@@ -216,8 +227,8 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MTMyMDg0NCwtODMxMTExMjM4LC0xNT
-M5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3MTk3
-OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMTAwNT
-MxNzMwMCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbMzY2OTU0NjI5LDE3NTEzMjA4NDQsLTgzMT
+ExMTIzOCwtMTUzOTY2MDg3OSwyNTczOTUwNTUsMTk2OTI4NzEx
+LDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0xMjU0NT
+ExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
 -->
