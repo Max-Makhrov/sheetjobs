@@ -185,9 +185,9 @@ Creates a copy of Spreadsheets with settings.
 
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`test1@test.com;test2@test.com`|recipients|
-|Option2|`Test email from Jobs`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2] = data_out;`|
-|Option3|`<p>Dear Max!</p><p>Someone is happily testing Jobs. Please <i>do not reply</i> to this message.</p>`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+|Option1|`test1@test.com;test2@test.com`|Recipient - list delimited by semicolon `;`|
+|Option2|`Test email from Jobs`|Subject|
+|Option3|`<p>Dear Max!</p><p>Someone is happily testing Jobs. Please <i>do not reply</i> to this message.</p>`|Body|
 
 ----
 
@@ -227,8 +227,8 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMDk4MzQ3NiwxNzUxMzIwODQ0LC04Mz
-ExMTEyMzgsLTE1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcx
-MSwxODgwMTcxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1ND
-UxMTA5OCwxMDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbLTExMDYwMDI4MzEsMTc1MTMyMDg0NCwtOD
+MxMTExMjM4LC0xNTM5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3
+MTEsMTg4MDE3MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNT
+Q1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
 -->
