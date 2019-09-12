@@ -12,7 +12,9 @@
 </p>
 
 Jobs is a Goole Spreadsheet with the script for automating tasks.
-Languages: Google-Apps-Script, JavaScript.
+
+ - [Installation](##Installation)
+ - [About](##About Jobs)
 
 ## Installation
 The simplest way is to [create your copy of Jobs](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy).
@@ -210,8 +212,8 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMTExMTIzOCwtMTUzOTY2MDg3OSwyNT
-czOTUwNTUsMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5
-LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMT
-AxNjgyM119
+eyJoaXN0b3J5IjpbLTgxODQ3ODU3MCwtODMxMTExMjM4LC0xNT
+M5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3MTk3
+OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMTAwNT
+MxNzMwMCwtMzExMDE2ODIzXX0=
 -->
