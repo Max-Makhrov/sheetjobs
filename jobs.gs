@@ -14,7 +14,7 @@ function test_Jobs()
   //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Create Row Groups');    
+  run_JOBS_('Send email');    
 }
 
 
@@ -58,11 +58,6 @@ function run_JOBS_(s_tags)
 
 */
 var CCC_REM = {};
-
-function sayHello()
-{
-  Browser.msgBox('Hello!\\nHow can I help?');   
-}
 
 function clearRangeContents_(options)
 {
@@ -252,6 +247,23 @@ function ungroupRows_(options) {
   return 0;
 }
 
+function sendGmail_(options)
+{
+  var range = options.range;
+  var Option1 = options.option1;
+  var Option2 = options.option2; 
+  var Option3 = options.option3;
+  var d1 = CCC_.STR_DELIMEER1;
+  
+  var emailer = 
+      {
+        emails: Option1.split(d1),
+        title: Option2,
+        msg: Option3
+      }; 
+  return runEmailer_(emailer);
+}
+
 
 
 
@@ -437,5 +449,19 @@ function writeDataToSheet_(writer)
   // set values
   range.setValues(data);
   
+  return 0;
+}
+
+function runEmailer_(emailer)
+{ 
+  if(emailer.msg === '') { return -1; } // not send empty email
+  GmailApp.sendEmail(
+    emailer.emails[0],               // recipient
+    emailer.title,                   // subject 
+    'test', {                        // body
+      htmlBody: emailer.msg,         // advanced options
+      cc:emailer.emails.join(',')    // all recipients 
+    }
+  );
   return 0;
 }
