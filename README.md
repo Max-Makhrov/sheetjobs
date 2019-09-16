@@ -187,7 +187,7 @@ Creates a copy of Spreadsheets with settings.
 
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`test1@test.com;test2@test.com`|Recipient - list delimited by semicolon `;`|
+|Option1|`test1@test.com,test2@test.com`|Recipient - list delimited by comma `,`|
 |Option2|`Test email from Jobs`|Subject|
 |Option3|`<p>Dear Max!</p><p>Someone is happily testing Jobs. Please <i>do not reply</i> to this message.</p>`|Body|
 
@@ -236,9 +236,9 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjQ4MDk1NzQsMjExNjE1MTk2MiwtMT
-EwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLTE1Mzk2
-NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcxOTc5LD
-M0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMDA1MzE3
-MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbNzAxMzk4ODc2LDIxMTYxNTE5NjIsLTExMD
+YwMDI4MzEsMTc1MTMyMDg0NCwtODMxMTExMjM4LC0xNTM5NjYw
+ODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3MTk3OSwzND
+AzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMTAwNTMxNzMw
+MCwtMzExMDE2ODIzXX0=
 -->
