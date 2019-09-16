@@ -1,10 +1,10 @@
 // file sample is here: https://drive.google.com/drive/folders/14gGmDQnrfDH-gAoaS3NxWNgSTQuoyDTV
 //
 // run_JOBS_(s_tags)
-//           ^ 'tag1;tag2': tags, splitted by ';'
+//           ^ 'tag1·tag2': tags, splitted by '·'
 //
 // Change tag /tags and run the function
-// To run more then 1 tag, use semicolon as a delimeter: Clear Ranges;Log Values
+// To run more then 1 tag, use semicolon as a delimeter: Clear Ranges·Log Values
 function test_Jobs()
 {
   // Test Tags:
@@ -14,7 +14,7 @@ function test_Jobs()
   //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Send email');    
+  run_JOBS_('Delete Rows');    
 }
 
 
@@ -134,25 +134,69 @@ function filterByColumn_(options)
   var option2   = options.option2;         // data_Jardine
   var option3   = options.option3;         // Col3~Jardine
   var d2        = options.d2;              // ~  
-  var options3  = option3.split(d2);       // ['Col3', 'Jardine']
-  var col       = options3[0];             // Col3
-  var index     = col.split('Col')[1] - 1; // 2
-  var value     = options3[1];             // Jardine
-  
-  // data in  
-  var dataIn = CCC_REM[option1];
+
+  // data in    
+  var dataIn = CCC_REM[option1]; 
   if (!dataIn) { return -1; } // no data
   
-  var dataOut = [], row = [];
-  for (var i = 0; i < dataIn.length; i++)
-  {
-    row = dataIn[i];
-    if (row[index] == value) { dataOut.push(row); } 
-  }
+  var filterum = 
+      {
+        data: dataIn,
+        stringConditions: option3,
+        delimeter: d2
+      };
+  var dataOut =  getFilter_(filterum).dataOut;
   
   CCC_REM[option2] = dataOut;
   return 0;
   
+}
+
+
+function hideRows_(options)
+{
+  
+  var option1   = options.option1;         // Col2~
+  // Col2~ means hide all rows where column 2 value = '' (empty)
+  var option2   = options.option2;         // order#1
+  // order#1 is a placeholder for the valiable with ranges data
+  // filtering a range requires getting the data. The data will be saved
+  // to this valiable just in case some other function will need this data
+  var r         = options.range;
+  var data      = r.getValues();
+  var d2        = options.d2;              // ~  
+  var sheet     = r.getSheet();
+  
+   var filterum = 
+      {
+        data: data,
+        stringConditions: option1,
+        delimeter: d2,
+        rowStart: r.getRow()
+      }; 
+  
+  var rowsHide = getFilter_(filterum).rowNums;
+  var rowSets = getRowSets_(rowsHide)
+  // rowSets = 
+  //  [{howMany=3.0, rowPosition=11.0}, {howMany=7.0, rowPosition=15.0}]
+  
+  for (var i = 0; i < rowSets.length; i++)
+  {
+     sheet.hideRows(rowSets[i].rowPosition, rowSets[i].howMany);  
+  }
+  
+  CCC_REM[option2] = data; 
+  
+  return 0;
+  
+}
+
+function showRows_(options)
+{
+  var r         = options.range;
+  var sheet     = r.getSheet(); 
+  sheet.showRows(r.getRow(), r.getHeight());  
+  return 0;  
 }
 
 
@@ -253,16 +297,57 @@ function sendGmail_(options)
   var Option1 = options.option1;
   var Option2 = options.option2; 
   var Option3 = options.option3;
-  var d1 = CCC_.STR_DELIMEER1;
   
   var emailer = 
       {
-        emails: Option1.split(d1),
+        emails: Option1.split(','),
         title: Option2,
         msg: Option3
       }; 
   return runEmailer_(emailer);
 }
+
+
+function deleteRows_(options)
+{
+  
+  var option1   = options.option1;         // Col2~
+  // Col2~ means delete all rows where column 2 value = '' (empty)
+  var option2   = options.option2;         // order#1
+  // order#1 is a placeholder for the valiable with ranges data
+  // filtering a range requires getting the data. The data will be saved
+  // to this valiable just in case some other function will need this data
+  var r         = options.range;
+  var data      = r.getValues();
+  var d2        = options.d2;              // ~  
+  var sheet     = r.getSheet();
+  
+   var filterum = 
+      {
+        data: data,
+        stringConditions: option1,
+        delimeter: d2,
+        rowStart: r.getRow()
+      }; 
+  
+  var rowsHide = getFilter_(filterum).rowNums;
+  var rowSets = getRowSets_(rowsHide)
+  // rowSets = 
+  //  [{howMany=3.0, rowPosition=11.0}, {howMany=7.0, rowPosition=15.0}]
+  
+  for (var i = rowSets.length - 1; i >= 0; i--)
+  {
+     sheet.deleteRows(rowSets[i].rowPosition, rowSets[i].howMany);  
+  }
+  
+  CCC_REM[option2] = data; 
+  
+  return 0;
+  
+}
+
+
+
 
 
 
@@ -394,6 +479,43 @@ function getRange_(ranger) {
 }
 
 
+//function getRowSets_test()
+//{
+//  var rows = [2,3,4,5,6,50,51,52,49,12,13];
+//  Logger.log(getRowSets_(rows)); //  [{howMany=5.0, rowPosition=2.0}, {howMany=2.0, rowPosition=12.0}, {howMany=4.0, rowPosition=49.0}] 
+//}
+function getRowSets_(rows)
+{
+  if (rows.length === 0) { return []; }
+  var rowsGroups = [];
+  function sortNumber_(a,b) {
+        return a - b;
+    }
+  rows.sort(sortNumber_);
+  var iniVal = rows[0] - 1;
+  var val;
+  var start = rows[0];
+  var set = { rowPosition: start, howMany: 0 }, sets = [];
+  for (var i = 0, l = rows.length; i < l; i++)
+  {
+    val = rows[i];   
+    if ( (val - iniVal) === 1) 
+    {
+      set.howMany = set.howMany + 1;           
+    }
+    else
+    {
+      sets.push(set);
+      var set = { rowPosition: (rows[i]), howMany: 1 }      
+    }
+    iniVal = val;
+  }
+  sets.push(set);
+  
+  return sets;  
+}
+
+
 
 /*
  __          __   _ _            
@@ -464,4 +586,63 @@ function runEmailer_(emailer)
     }
   );
   return 0;
+}
+
+
+
+/*                                          
+  ______ _ _ _            
+ |  ____(_) | |           
+ | |__   _| | |_ ___ _ __ 
+ |  __| | | | __/ _ \ '__|
+ | |    | | | ||  __/ |   
+ |_|    |_|_|\__\___|_|   
+                                                            
+*/
+//function test_getFilter()
+//{
+//  var data = [[1, 'a'],[2, 'a'],[3, 'd'],[4, 'a']]; 
+//  var filterum = 
+//      {
+//        data: data,
+//        stringConditions: 'Col2~a',
+//        delimeter: '~',
+//        rowStart: 10
+//      };
+//  Logger.log(getFilter_(filterum));
+//  // {dataOut=[[1.0, a], [2.0, a], [4.0, a]], rowNums=[10.0, 11.0, 13.0]}
+//}
+function getFilter_(filterum)
+{
+  var data = filterum.data;
+  var stringConditions = filterum.stringConditions;
+  
+  // returns all the data if 
+  if (!stringConditions) { return data; }
+  
+  var d = filterum.delimeter;
+  var rowStart = filterum.rowStart || 1;
+  
+  var conditions  = stringConditions.split(d);          // ['Col2', 'a']
+  var col         = conditions[0];                      // Col2
+  var index       = col.split('Col')[1] - 1;            // 1
+  var value       = conditions[1];                      // a  
+
+  var dataOut = [], row = [], rowNums = [];
+  for (var i = 0; i < data.length; i++)
+  {
+    row = data[i];
+    if (row[index] == value) { 
+      dataOut.push(row); 
+      rowNums.push(i + rowStart);
+    } 
+  }
+  
+  var res = 
+      {    
+        dataOut: dataOut,
+        rowNums: rowNums
+      };  
+  return res;
+    
 }
