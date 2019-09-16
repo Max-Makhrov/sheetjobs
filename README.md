@@ -142,6 +142,8 @@ Full list of Jobs functions
 |groupRows_|Creates a new row group for selected range|no|
 |ungroupRows_|Clears all row groups in selected range|no|
 |sendGmail_|Clears all row groups in selected range|[link](#sendGmail_)|
+|hideRows_|Clears all row groups in selected range|[link](#hideRows_)|
+|showRows_|Clears all row groups in selected range|[link](#showRows_)|
 
 
 ### rememberValues_
@@ -227,8 +229,9 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDYwMDI4MzEsMTc1MTMyMDg0NCwtOD
-MxMTExMjM4LC0xNTM5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3
-MTEsMTg4MDE3MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNT
-Q1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbNDg4Mzk2NDAzLC0xMTA2MDAyODMxLDE3NT
+EzMjA4NDQsLTgzMTExMTIzOCwtMTUzOTY2MDg3OSwyNTczOTUw
+NTUsMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04Nz
+gxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgy
+M119
 -->
