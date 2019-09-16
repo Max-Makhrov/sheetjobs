@@ -191,6 +191,13 @@ Creates a copy of Spreadsheets with settings.
 |Option2|`Test email from Jobs`|Subject|
 |Option3|`<p>Dear Max!</p><p>Someone is happily testing Jobs. Please <i>do not reply</i> to this message.</p>`|Body|
 
+
+### hideRows_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`myVar`|2 parameters delimited by `~`: column to filter, value to hide. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+|Option2|`myVar`|The key (name) of variable. The script will log values from memory: `Logger.log(CCC_REM[Option1]);`|
+
 ----
 
 ## Archive samples (will migrate to Jobs):
@@ -229,9 +236,9 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNjE1MTk2MiwtMTEwNjAwMjgzMSwxNz
-UxMzIwODQ0LC04MzExMTEyMzgsLTE1Mzk2NjA4NzksMjU3Mzk1
-MDU1LDE5NjkyODcxMSwxODgwMTcxOTc5LDM0MDMwMzI0OSwtOD
-c4MTExNCwtMTI1NDUxMTA5OCwxMDA1MzE3MzAwLC0zMTEwMTY4
-MjNdfQ==
+eyJoaXN0b3J5IjpbLTE1NTI3MTMzNjEsMjExNjE1MTk2MiwtMT
+EwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLTE1Mzk2
+NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcxOTc5LD
+M0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMDA1MzE3
+MzAwLC0zMTEwMTY4MjNdfQ==
 -->
