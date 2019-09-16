@@ -142,8 +142,8 @@ Full list of Jobs functions
 |groupRows_|Creates a new row group for selected range|no|
 |ungroupRows_|Clears all row groups in selected range|no|
 |sendGmail_|Clears all row groups in selected range|[link](#sendGmail_)|
-|hideRows_|Clears all row groups in selected range|[link](#hideRows_)|
-|showRows_|Clears all row groups in selected range|[link](#showRows_)|
+|hideRows_|Hide rows if a condition mets|[link](#hideRows_)|
+|showRows_|Show rows|no|
 
 
 ### rememberValues_
@@ -229,9 +229,9 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg4Mzk2NDAzLC0xMTA2MDAyODMxLDE3NT
-EzMjA4NDQsLTgzMTExMTIzOCwtMTUzOTY2MDg3OSwyNTczOTUw
-NTUsMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04Nz
-gxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgy
-M119
+eyJoaXN0b3J5IjpbMjExNjE1MTk2MiwtMTEwNjAwMjgzMSwxNz
+UxMzIwODQ0LC04MzExMTEyMzgsLTE1Mzk2NjA4NzksMjU3Mzk1
+MDU1LDE5NjkyODcxMSwxODgwMTcxOTc5LDM0MDMwMzI0OSwtOD
+c4MTExNCwtMTI1NDUxMTA5OCwxMDA1MzE3MzAwLC0zMTEwMTY4
+MjNdfQ==
 -->
