@@ -195,7 +195,7 @@ Creates a copy of Spreadsheets with settings.
 ### hideRows_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`Col2~`|2 parameters delimited by `~`: column-to-filter **~** value-to-hide. In this case, hide rows where column 2 value = '' (empty). Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+|Option1|`Col2~`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, hide rows where column 2 value = '' (empty). Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 |Option2|`myVar`|The key (name) of variable. The script will save data values to memory: `CCC_REM[Option2] = data;`|
 
 ----
@@ -236,9 +236,9 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY5ODE1OTc5LDIxMTYxNTE5NjIsLTExMD
-YwMDI4MzEsMTc1MTMyMDg0NCwtODMxMTExMjM4LC0xNTM5NjYw
-ODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3MTk3OSwzND
-AzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMTAwNTMxNzMw
-MCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbLTE5NjQ4MDk1NzQsMjExNjE1MTk2MiwtMT
+EwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLTE1Mzk2
+NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcxOTc5LD
+M0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMDA1MzE3
+MzAwLC0zMTEwMTY4MjNdfQ==
 -->
