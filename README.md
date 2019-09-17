@@ -202,8 +202,8 @@ Creates a copy of Spreadsheets with settings.
 ### createPDF_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`1PDVZau3tL4WhiFr51xhe8N25aqVoWXSD`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, hide rows where column 2 value = '' (empty). Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
-|Option2|`myVar`|The key (name) of variable. The script will save data values to memory: `CCC_REM[Option2] = data;`|
+|Option1|`1PDVZau3tL4WhiFr51xhe8N25aqVoWXSD`|The folder ID where to save new created PDF|
+|Option2|`Order. 2019-09-17 14:46:50`|The name of a new PDF-file|
 
 ----
 
@@ -243,7 +243,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDUzODkzNCw3MDEzOTg4NzYsMjExNj
+eyJoaXN0b3J5IjpbLTI4NDcwODU1MCw3MDEzOTg4NzYsMjExNj
 E1MTk2MiwtMTEwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEy
 MzgsLTE1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxOD
 gwMTcxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5
