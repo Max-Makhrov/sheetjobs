@@ -213,6 +213,13 @@ Creates a copy of Spreadsheets with settings.
 |Option1|`Col2~delete`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, hide rows where column 2 value = 'delete'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 |Option2|`all-rows`|The key (name) of variable. The script will save the initial range data values to memory: `CCC_REM[Option2] = dataIn;`|
 
+### setColumnFilterCriteria_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`Col2~East`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, leave rows where column 2 value = 'East'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+
+
+
 ----
 
 ## Archive samples (will migrate to Jobs):
@@ -251,9 +258,9 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NzgyNTE4MCw3MDEzOTg4NzYsMjExNj
-E1MTk2MiwtMTEwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEy
-MzgsLTE1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxOD
-gwMTcxOTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5
-OCwxMDA1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbLTE4NDgzMDA3NjQsNzAxMzk4ODc2LDIxMT
+YxNTE5NjIsLTExMDYwMDI4MzEsMTc1MTMyMDg0NCwtODMxMTEx
+MjM4LC0xNTM5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMT
+g4MDE3MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEw
+OTgsMTAwNTMxNzMwMCwtMzExMDE2ODIzXX0=
 -->
