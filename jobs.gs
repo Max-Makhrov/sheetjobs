@@ -14,7 +14,7 @@ function test_Jobs()
   //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Delete Rows');    
+  run_JOBS_('Set filter criteria');    
 }
 
 
@@ -185,7 +185,7 @@ function hideRows_(options)
      sheet.hideRows(rowSets[i].rowPosition, rowSets[i].howMany);  
   }
   
-  CCC_REM[option2] = data; 
+  if (option2) { CCC_REM[option2] = data; }
   
   return 0;
   
@@ -340,12 +340,78 @@ function deleteRows_(options)
      sheet.deleteRows(rowSets[i].rowPosition, rowSets[i].howMany);  
   }
   
-  CCC_REM[option2] = data; 
+  if (option2) { CCC_REM[option2] = data; }
   
   return 0;
   
 }
 
+
+
+function createPDF_(options)
+{
+  var r = options.range;
+  var s = r.getSheet();
+  var f = s.getParent();
+  var folderID = options.option1;
+  var pdfName = options.option2; 
+  var folder = DriveApp.getFolderById(folderID); 
+  
+  var baseUrl = 'https://docs.google.com/spreadsheets/d/SS_ID/export?';
+  var url = baseUrl.replace('SS_ID', f.getId());
+  
+  // export url
+  var url = 'https://docs.google.com/spreadsheets/d/'+ f.getId()+'/export?exportFormat=pdf&format=pdf' // export as pdf / csv / xls / xlsx
+  + '&size=A4'                           // paper size legal / letter / A4
+  + '&portrait=true'                     // orientation, false for landscape
+  + '&fitw=false'                        // fit to page width, false for actual size
+  + '&sheetnames=false&printtitle=false' // hide optional headers and footers
+  + '&pagenumbers=false&gridlines=false' // hide page numbers and gridlines
+  + '&fzr=false'                         // do not repeat row headers (frozen rows) on each page
+  + '&gid='+s.getSheetId();              // the sheet's Id 
+  
+  var token = ScriptApp.getOAuthToken();  
+  // request export url
+  var response = UrlFetchApp.fetch(url, {
+    headers: {
+      'Authorization': 'Bearer ' +  token
+    }
+  });
+  var theBlob = response.getBlob().setName(pdfName+'.pdf');
+  
+  // create pdf
+  var newFile = folder.createFile(theBlob); 
+  
+  return 0;
+  
+}
+
+
+function setColumnFilterCriteria_(options)
+{
+  
+  var r = options.range;
+  var stringConditions = options.option1;    
+  var d = options.d2;              // ~  ;
+  
+  var conditions  = stringConditions.split(d);          // ['Col2', 'a']
+  var col         = conditions[0];                      // Col2
+  var index       = col.split('Col')[1] - 0;            // 2
+  var value       = conditions[1];                      // a 
+  
+  
+  var sheet = r.getSheet();
+  var filter = sheet.getFilter();
+  
+  if (!filter) { return -1; } // no filter in a sheet
+  
+  var criteria = SpreadsheetApp.newFilterCriteria(); 
+  criteria.whenTextEqualTo(value);  
+  filter.setColumnFilterCriteria(index, criteria);
+
+  return 0;
+  
+}
 
 
 
@@ -615,10 +681,7 @@ function runEmailer_(emailer)
 function getFilter_(filterum)
 {
   var data = filterum.data;
-  var stringConditions = filterum.stringConditions;
-  
-  // returns all the data if 
-  if (!stringConditions) { return data; }
+  var stringConditions = filterum.stringConditions;  
   
   var d = filterum.delimeter;
   var rowStart = filterum.rowStart || 1;
@@ -632,17 +695,24 @@ function getFilter_(filterum)
   for (var i = 0; i < data.length; i++)
   {
     row = data[i];
-    if (row[index] == value) { 
+    if (!stringConditions)
+    {
+      rowNums.push(i + rowStart);      
+    }
+    else if (row[index] == value) { 
       dataOut.push(row); 
       rowNums.push(i + rowStart);
     } 
   }
   
+  if (!stringConditions) { dataOut = data; }
+
   var res = 
       {    
         dataOut: dataOut,
         rowNums: rowNums
       };  
   return res;
-    
+  
+  
 }
