@@ -537,10 +537,15 @@ function getRange_(ranger) {
       var row = range.getRow();
       var col = range.getColumn();
       return range.offset(0, 0, rows - row + 1, cols - col + 1);
+    case 'first free row':
+      var sheet = range.getSheet();
+      var freeRow = sheet.getLastRow() + 1;
+      var row = range.getRow();
+      return range.offset(freeRow - row, 0);      
     default:
       return range;
   };
- 
+
   
 }
 
