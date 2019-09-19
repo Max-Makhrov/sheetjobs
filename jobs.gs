@@ -14,7 +14,7 @@ function test_Jobs()
   //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Set filter criteria');    
+  run_JOBS_('Delete Rows');    
 }
 
 
@@ -72,14 +72,21 @@ function rememberValues_(options)
   var holder = options.option1;
   var range = options.range;
   var values = range.getValues();
-  CCC_REM[holder] = values; 
+  
+  var rem = {};
+  rem.range = range;
+  rem.data = values;
+  
+  CCC_REM[holder] = rem; 
   return 0;
 }
 
 function logValues_(options)
 {
-  var holder = options.option1;  
-  Logger.log(CCC_REM[holder]);
+  var holder = options.option1; 
+  var rem = CCC_REM[holder];
+  if (!rem) { return -1 }
+  Logger.log(rem.data);
   return 0;  
 }
 
@@ -121,7 +128,8 @@ function copyByTemplate_(options)
   }
     
   // remember new created file id
-  CCC_REM[option3] = [[id]]; // save as 2d array
+  var rem = { data: [[id]] }; // save as 2d array
+  CCC_REM[option3] = rem; 
   
   return 0;
   
@@ -135,9 +143,11 @@ function filterByColumn_(options)
   var option3   = options.option3;         // Col3~Jardine
   var d2        = options.d2;              // ~  
 
-  // data in    
-  var dataIn = CCC_REM[option1]; 
-  if (!dataIn) { return -1; } // no data
+  // data in  
+  var rem = CCC_REM[option1]; 
+  if (!rem) { return -1; } // no rem  
+  var dataIn = rem.data; 
+  if (!dataIn) { return -2; } // no data
   
   var filterum = 
       {
@@ -147,7 +157,8 @@ function filterByColumn_(options)
       };
   var dataOut =  getFilter_(filterum).dataOut;
   
-  CCC_REM[option2] = dataOut;
+  var rem = { data: dataOut };
+  CCC_REM[option2] = rem;
   return 0;
   
 }
@@ -185,7 +196,10 @@ function hideRows_(options)
      sheet.hideRows(rowSets[i].rowPosition, rowSets[i].howMany);  
   }
   
-  if (option2) { CCC_REM[option2] = data; }
+  if (option2) { 
+    var rem = { data: data };
+    CCC_REM[option2] = rem;   
+  }
   
   return 0;
   
@@ -206,8 +220,10 @@ function writeValues_(options)
   var option1 = options.option1; // data_Jardine
   
   // data in  
-  var dataIn = CCC_REM[option1];
-  if (!dataIn) { return -1; } // no data  
+  var rem = CCC_REM[option1];
+  if (!rem) { return -1; } // no rem
+  var dataIn = rem.data;
+  if (!dataIn) { return -2; } // no data  
 
   var writer = 
       {
@@ -340,7 +356,10 @@ function deleteRows_(options)
      sheet.deleteRows(rowSets[i].rowPosition, rowSets[i].howMany);  
   }
   
-  if (option2) { CCC_REM[option2] = data; }
+  if (option2) { 
+    var rem = { data: data };
+    CCC_REM[option2] = rem;   
+  }
   
   return 0;
   
@@ -395,6 +414,9 @@ function setColumnFilterCriteria_(options)
   var d = options.d2;              // ~  ;
   
   var conditions  = stringConditions.split(d);          // ['Col2', 'a']
+  
+  if (!conditions) { return -1; } // no conditions set
+  
   var col         = conditions[0];                      // Col2
   var index       = col.split('Col')[1] - 0;            // 2
   var value       = conditions[1];                      // a 
@@ -403,7 +425,7 @@ function setColumnFilterCriteria_(options)
   var sheet = r.getSheet();
   var filter = sheet.getFilter();
   
-  if (!filter) { return -1; } // no filter in a sheet
+  if (!filter) { return -2; } // no filter in a sheet
   
   var criteria = SpreadsheetApp.newFilterCriteria(); 
   criteria.whenTextEqualTo(value);  
@@ -415,6 +437,54 @@ function setColumnFilterCriteria_(options)
 
 
 
+function copyRangeContents_(options)
+{
+  var holder = options.option1;
+  if (!holder) { return -1; } // no holder
+  var rem = CCC_REM[holder];
+  if (!rem) { return -2; } // no rem
+  var rTo = rem.range;   
+  if (!rTo) { return -3; } // to range to
+    
+  var range = options.range;  
+  
+  // add rows if needed
+  var sheet = range.getSheet();
+  var rows = sheet.getMaxRows();
+  var rangeLastRow = range.getRow() + range.getHeight() - 1;
+  if (rows < rangeLastRow)
+  {
+    sheet.insertRowsAfter(rows, rangeLastRow - rows + 1);    
+  }
+    
+  rTo.copyTo(range, {contentsOnly:true});
+  return 0;    
+}
+
+
+function copyRange_(options)
+{
+  var holder = options.option1;
+  if (!holder) { return -1; } // no holder
+  var rem = CCC_REM[holder];
+  if (!rem) { return -2; } // no rem
+  var rTo = rem.range;   
+  if (!rTo) { return -3; } // to range to
+    
+  var range = options.range;  
+  
+  // add rows if needed
+  var sheet = range.getSheet();
+  var rows = sheet.getMaxRows();
+  var rangeLastRow = range.getRow() + range.getHeight() - 1;
+  if (rows < rangeLastRow)
+  {
+    sheet.insertRowsAfter(rows, rangeLastRow - rows + 1);    
+  }
+    
+  rTo.copyTo(range);
+  return 0;    
+}
 
 
 
