@@ -124,8 +124,8 @@ Here's how the script treats data:
 
 |Script option|Description|
 |-------------|-----------|
-|Save data|The script writes data to the global object `CCC_REM`. You set the `key` of variable. Script saves the data with this key: `CCC_REM[key] = data;`|
-|Get data|Use key to get the data: `CCC_REM[key]`. The code to log the data: `Logger.log(CCC_REM[key]);`. To see the log in Google-Script-Editor, press [Ctrl]+[Enter]|
+|Save data|The script writes data to the global object `CCC_REM`. You set the `key` of variable. Script saves the data with this key: `CCC_REM[key] = rem.data;`|
+|Get data|Use key to get the data: `CCC_REM[key].data`. The code to log the data: `Logger.log(CCC_REM[key]);`. To see the log in Google-Script-Editor, press [Ctrl]+[Enter]|
 
  ## Jobs Functions
 Full list of Jobs functions
@@ -258,10 +258,10 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTYxOTA2NTUsLTE4NDgzMDA3NjQsNz
-AxMzk4ODc2LDIxMTYxNTE5NjIsLTExMDYwMDI4MzEsMTc1MTMy
-MDg0NCwtODMxMTExMjM4LC0xNTM5NjYwODc5LDI1NzM5NTA1NS
-wxOTY5Mjg3MTEsMTg4MDE3MTk3OSwzNDAzMDMyNDksLTg3ODEx
-MTQsLTEyNTQ1MTEwOTgsMTAwNTMxNzMwMCwtMzExMDE2ODIzXX
-0=
+eyJoaXN0b3J5IjpbNTQ5MTczNjk3LC0xMTk2MTkwNjU1LC0xOD
+Q4MzAwNzY0LDcwMTM5ODg3NiwyMTE2MTUxOTYyLC0xMTA2MDAy
+ODMxLDE3NTEzMjA4NDQsLTgzMTExMTIzOCwtMTUzOTY2MDg3OS
+wyNTczOTUwNTUsMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMzAz
+MjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLT
+MxMTAxNjgyM119
 -->
