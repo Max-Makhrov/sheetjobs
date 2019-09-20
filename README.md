@@ -147,6 +147,8 @@ Full list of Jobs functions
 |createPDF_|Creates PDF from a given sheet|[link](#createPDF_)|
 |deleteRows_|Deletes rows when condition mets. If no condition set, all rows will be deleted|[link](#deleteRows_)|
 |setColumnFilterCriteria_|Sets filter criteria by 1 column to existing filter.|[link](#setColumnFilterCriteria_)|
+|copyRange_|Copy entire range: values, |[link](#copyRange_)|
+|copyRangeContents_|Sets filter criteria by 1 column to existing filter.|[link](#copyRangeContents_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -258,10 +260,10 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ5MTczNjk3LC0xMTk2MTkwNjU1LC0xOD
-Q4MzAwNzY0LDcwMTM5ODg3NiwyMTE2MTUxOTYyLC0xMTA2MDAy
-ODMxLDE3NTEzMjA4NDQsLTgzMTExMTIzOCwtMTUzOTY2MDg3OS
-wyNTczOTUwNTUsMTk2OTI4NzExLDE4ODAxNzE5NzksMzQwMzAz
-MjQ5LC04NzgxMTE0LC0xMjU0NTExMDk4LDEwMDUzMTczMDAsLT
-MxMTAxNjgyM119
+eyJoaXN0b3J5IjpbOTMzOTU0MjY4LDU0OTE3MzY5NywtMTE5Nj
+E5MDY1NSwtMTg0ODMwMDc2NCw3MDEzOTg4NzYsMjExNjE1MTk2
+MiwtMTEwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLT
+E1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcx
+OTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMD
+A1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
 -->
