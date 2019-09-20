@@ -153,7 +153,7 @@ Full list of Jobs functions
 ### rememberValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`myVar`|The key (name) of variable. The script will remember values from selected range: `CCC_REM[Option1] = values;`|
+|Option1|`myVar`|The key (name) of variable. The script will remember values from selected range: `CCC_REM[Option1].data = values;`|
 
 ### logValues_
 |Column|Sample Value|Description|
@@ -167,19 +167,19 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`Smith`|The copied file has a cell with changed parameter. The script changes this cell content to Option1-value: `range.setValue(Option1);`. The script also uses it in the new file's name: `copy.setName(prefix + Option1 + postfix);`|
 |Option2|`1fqhDJz4ZRkeSphqipOYBTw8lwMifwkW6~Report_~_created by Jobs`|3 parameters delimited by `~`: folder ID, file's name prefix, file's name postfix. Folder ID = the ID of distination folder. The script will create new file in this folder. Prefix and postfix are used for file naming.|
-|Option3|`Jardine_fileId`|The key (name) of variable. The script will put the file id into this key: `CCC_REM[Option3] = [[id]]; // save as 2d array`|
+|Option3|`Jardine_fileId`|The key (name) of variable. The script will put the file id into this key: `CCC_REM[Option3].data = [[id]]; // save as 2d array`|
 
 ### filterByColumn_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`data_mastrer`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1];`|
-|Option2|`data_Smith`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2] = data_out;`|
+|Option1|`data_mastrer`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1].data;`|
+|Option2|`data_Smith`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2].data = data_out;`|
 |Option3|`Col3~Smith`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 
 ### writeValues_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1];`. The script will write the data to selected range.|
+|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1].data;`. The script will write the data to selected range.|
 
 ### createDataValidation_
 |Column|Sample Value|Description|
@@ -200,7 +200,7 @@ Creates a copy of Spreadsheets with settings.
 |Column|Sample Value|Description|
 |--|--|--|
 |Option1|`Col2~`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, hide rows where column 2 value = '' (empty). Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
-|Option2|`myVar`|The key (name) of variable. The script will save data values to memory: `CCC_REM[Option2] = data;`|
+|Option2|`myVar`|The key (name) of variable. The script will save data values to memory: `CCC_REM[Option2].data = data;`|
 
 ### createPDF_
 |Column|Sample Value|Description|
@@ -213,7 +213,7 @@ Creates a copy of Spreadsheets with settings.
 |Column|Sample Value|Description|
 |--|--|--|
 |Option1|`Col2~delete`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, hide rows where column 2 value = 'delete'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
-|Option2|`all-rows`|The key (name) of variable. The script will save the initial range data values to memory: `CCC_REM[Option2] = dataIn;`|
+|Option2|`all-rows`|The key (name) of variable. The script will save the initial range data values to memory: `CCC_REM[Option2].data = dataIn;`|
 
 ### setColumnFilterCriteria_
 |Column|Sample Value|Description|
@@ -223,7 +223,8 @@ Creates a copy of Spreadsheets with settings.
 ### copyRange_
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`Col2~East`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, leave rows where column 2 value = 'East'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1].range;`.|
+
 
 
 ----
@@ -264,7 +265,7 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNDQ4NjI5MSw1NDkxNzM2OTcsLTExOT
+eyJoaXN0b3J5IjpbMTY1MTQ4MDU5NSw1NDkxNzM2OTcsLTExOT
 YxOTA2NTUsLTE4NDgzMDA3NjQsNzAxMzk4ODc2LDIxMTYxNTE5
 NjIsLTExMDYwMDI4MzEsMTc1MTMyMDg0NCwtODMxMTExMjM4LC
 0xNTM5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3
