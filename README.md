@@ -147,8 +147,8 @@ Full list of Jobs functions
 |createPDF_|Creates PDF from a given sheet|[link](#createPDF_)|
 |deleteRows_|Deletes rows when condition mets. If no condition set, all rows will be deleted|[link](#deleteRows_)|
 |setColumnFilterCriteria_|Sets filter criteria by 1 column to existing filter.|[link](#setColumnFilterCriteria_)|
-|copyRange_|Copy entire range: values, |[link](#copyRange_)|
-|copyRangeContents_|Sets filter criteria by 1 column to existing filter.|[link](#copyRangeContents_)|
+|copyRange_|Copy entire range: values, formatting, validation rules, images, checkboxes|[link](#copyRange_)|
+|copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -220,6 +220,10 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`Col2~East`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, leave rows where column 2 value = 'East'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 
+### copyRange_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`Col2~East`|2 parameters delimited by `~`: column-to-filter<b>~</b>value-to-hide. In this case, leave rows where column 2 value = 'East'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
 
 
 ----
@@ -260,10 +264,10 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMzOTU0MjY4LDU0OTE3MzY5NywtMTE5Nj
-E5MDY1NSwtMTg0ODMwMDc2NCw3MDEzOTg4NzYsMjExNjE1MTk2
-MiwtMTEwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLT
-E1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcx
-OTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMD
-A1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbMTAyNDQ4NjI5MSw1NDkxNzM2OTcsLTExOT
+YxOTA2NTUsLTE4NDgzMDA3NjQsNzAxMzk4ODc2LDIxMTYxNTE5
+NjIsLTExMDYwMDI4MzEsMTc1MTMyMDg0NCwtODMxMTExMjM4LC
+0xNTM5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3
+MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMT
+AwNTMxNzMwMCwtMzExMDE2ODIzXX0=
 -->
