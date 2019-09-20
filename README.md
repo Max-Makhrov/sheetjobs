@@ -225,7 +225,10 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1].range;`.|
 
-
+### copyRangeContents_
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1].range;`.|
 
 ----
 
@@ -265,10 +268,10 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1MTQ4MDU5NSw1NDkxNzM2OTcsLTExOT
-YxOTA2NTUsLTE4NDgzMDA3NjQsNzAxMzk4ODc2LDIxMTYxNTE5
-NjIsLTExMDYwMDI4MzEsMTc1MTMyMDg0NCwtODMxMTExMjM4LC
-0xNTM5NjYwODc5LDI1NzM5NTA1NSwxOTY5Mjg3MTEsMTg4MDE3
-MTk3OSwzNDAzMDMyNDksLTg3ODExMTQsLTEyNTQ1MTEwOTgsMT
-AwNTMxNzMwMCwtMzExMDE2ODIzXX0=
+eyJoaXN0b3J5IjpbNDc1NjcwMTIyLDU0OTE3MzY5NywtMTE5Nj
+E5MDY1NSwtMTg0ODMwMDc2NCw3MDEzOTg4NzYsMjExNjE1MTk2
+MiwtMTEwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLT
+E1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcx
+OTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMD
+A1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
 -->
