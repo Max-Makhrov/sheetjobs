@@ -83,7 +83,7 @@ All settings are in the sheet \_Jobs\_:
 |File Id|Get file id from the browser URL: ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_fileid.png?w=676)  Or get file id from the script using [`File.GetId()`](https://developers.google.com/apps-script/reference/drive/file#getid) method.|basic|The file where whe script was executed: [`SpreadsheetApp.getActive()`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#getActive%28%29)|
 |Sheet Name|The name of a sheet.|basic|The left-most sheet in a file: [`File.getSheets[0]`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#getsheets).
 |Range-A1|A range address in A1-Notation|basic|A range with data: [`sheet.getDataRange()`](https://developers.google.com/apps-script/reference/spreadsheet/sheet#getdatarange)
-|Range Type|Select between options: `range only`, `range and columns behind`, `range up to the end of sheet`, `first free row	`|basic|`range only`|
+|Range Type|Select between options: `range only`, `range and rows behind`, `range up to the end of sheet`, `first free row	`|basic|`range only`|
 |Operation|The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs.|special<sup id="a2">[2](#f2)</sup>|-|
 |Option1, Option2, Option3|Contains any text depending on the script settings.|special|-|
 |Tag|The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag.|basic|-|
@@ -268,10 +268,10 @@ Send custom emails
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <a name="overview"></a>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc1NjcwMTIyLDU0OTE3MzY5NywtMTE5Nj
-E5MDY1NSwtMTg0ODMwMDc2NCw3MDEzOTg4NzYsMjExNjE1MTk2
-MiwtMTEwNjAwMjgzMSwxNzUxMzIwODQ0LC04MzExMTEyMzgsLT
-E1Mzk2NjA4NzksMjU3Mzk1MDU1LDE5NjkyODcxMSwxODgwMTcx
-OTc5LDM0MDMwMzI0OSwtODc4MTExNCwtMTI1NDUxMTA5OCwxMD
-A1MzE3MzAwLC0zMTEwMTY4MjNdfQ==
+eyJoaXN0b3J5IjpbMTc0MTA3MzQzMiw0NzU2NzAxMjIsNTQ5MT
+czNjk3LC0xMTk2MTkwNjU1LC0xODQ4MzAwNzY0LDcwMTM5ODg3
+NiwyMTE2MTUxOTYyLC0xMTA2MDAyODMxLDE3NTEzMjA4NDQsLT
+gzMTExMTIzOCwtMTUzOTY2MDg3OSwyNTczOTUwNTUsMTk2OTI4
+NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0xMj
+U0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
 -->
