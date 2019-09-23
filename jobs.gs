@@ -596,7 +596,7 @@ function getRange_(ranger) {
   switch (rangeType) {
     case 'range only':
       return range;
-    case 'range and columns behind':
+    case 'range and rows behind':
       var row = range.getRow();
       var rows = range.getSheet().getMaxRows();
       return range.offset(0, 0, rows - row + 1);
