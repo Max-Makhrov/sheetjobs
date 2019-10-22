@@ -14,7 +14,7 @@ function test_Jobs()
   //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Delete Rows');    
+  run_JOBS_('Ala-Sql test');    
 }
 
 
@@ -486,6 +486,74 @@ function copyRange_(options)
   return 0;    
 }
 
+function runPureAlaSql_(options)
+{
+  return runAlaSql_(options);  
+}
+
+function runCol1AlaSql_(options)
+{
+  options.convertFromCol1 = true;
+  return runAlaSql_(options);  
+}
+
+function runAlaSql_(options)
+{
+  // TODO:
+  // see https://docs.google.com/spreadsheets/d/1V0kHvuS0QfzgYTvkut9UkwcgK_51KV2oHDxKE6dMX7A/edit#gid=1656408499
+  //    1. use Col1-notation?
+  //    2. auto-add unique aliases for each column
+  //    4. if dataset has 1 data, replace * with cols.
+
+  var alasql = AlaSQLGS.load();
+  // to convert the result into 2D-array
+  alasql.options.modifier = 'MATRIX'; // https://github.com/agershun/alasql/wiki/MATRIX
+  // to get results from 2 tables with 'select *...'
+  alasql.options.joinstar = 'underscore'; // https://github.com/agershun/alasql/issues/547#issuecomment-172654421
+  
+  // alasql.options.fullnameflip = true;
+  alasql.options.fullname = 'all';
+  // alasql.options.fullnametoken = '.';
+  var option1 = options.option1; // data1~data2~data3...
+  var d = options.d2;
+  var dataTags = option1.split(d);
+  
+  var datasets = [], data;
+  for (var i = 0; i < dataTags.length; i++)
+  {
+    data = CCC_REM[dataTags[i]].data;
+    if (!data) { return -1; } // no data
+    datasets.push(data);
+  }
+  
+  var holder = options.option3;
+  var sql = options.option2;
+  
+  // convert from Col1, Col2 → [0], [1]
+  var convertFromCol1 = options.convertFromCol1;  
+  if (convertFromCol1)
+  {
+    sql = convertCol1ToAlaSql_(sql);
+  }
+  
+  var res = alasql(sql, datasets);
+  
+  var rem = {};
+  rem.data = res;
+  
+  CCC_REM[holder] = rem;
+  
+  return 0;  
+  
+}
+
+
+function convertCol1ToAlaSql_(string)
+{
+  var result = string.replace(/(Col)(\d+) *?/g, "[$2]");
+  result = result.replace(/\[(\d+)\]/g, function(a,n){ return "["+ (+n-1) +"]"; });
+  return result;
+}
 
 
 /*
@@ -502,8 +570,8 @@ function runJOBS_(ids)
 {
   getSettings_();
   
-  var d = CCC_.STR_DELIMEER1;
-  var d2 = CCC_.STR_DELIMEER2;
+  var d = CCC_.STR_DELIMEER1;  // · (it's not a dot!)
+  var d2 = CCC_.STR_DELIMEER2; // ~
   var all_ids = CCC_.IDS_JOBS.split(d);
   var all_fileids = CCC_.FILEIDS_JOBS.split(d);
   var all_sheetname = CCC_.SHEETNAME_JOBS.split(d);
