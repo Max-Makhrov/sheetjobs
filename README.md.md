@@ -236,7 +236,7 @@ Creates a copy of Spreadsheets with settings.
 
 ### runPureAlaSql_
 
-Uses this alasqlgs 
+Uses this [alasqlgs](https://github.com/contributorpw/alasqlgs) library.
 
 |Column|Sample Value|Description|
 |--|--|--|
@@ -281,5 +281,5 @@ Send custom emails
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDEyNjIxMjgzXX0=
+eyJoaXN0b3J5IjpbNTQ2ODMwODc0XX0=
 -->
