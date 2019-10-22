@@ -1,4 +1,5 @@
 
+
 # Jobs
 <p align="left">
     <a href="https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy" alt="Copy Sample Google Spreadsheet File">
@@ -149,6 +150,8 @@ Full list of Jobs functions
 |setColumnFilterCriteria_|Sets filter criteria by 1 column to existing filter.|[link](#setColumnFilterCriteria_)|
 |copyRange_|Copy entire range: values, formatting, validation rules, images, checkboxes|[link](#copyRange_)|
 |copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
+|runPureAlaSql_|Modify data with Ala-Sql|[link](#runPureAlaSql_)|
+|runCol1AlaSql_|Modify data with Ala-Sql|[link](#runCol1AlaSql_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -230,6 +233,28 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1].range;`.|
 
+
+### runPureAlaSql_
+
+Uses this [alasqlgs](https://github.com/contributorpw/alasqlgs) library.
+
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`data1~data2`|datasets aliases delimited by `~`|
+|Option2|`SELECT data1.[0] col000, data1.[1] col001, data1.[2] col002, data1.[3] col003, data1.[4] col004, data1.[5] col005, data1.[6] col006, data1.[7] col007, data1.[8] col008, data1.[9] col009, data1.[10] col010, data2.[0], data2.[1], data2.[2], data2.[3], data2.[4], data2.[5], data2.[6], data2.[7], data2.[8], data2.[9] FROM ? AS data1 JOIN ? AS data2 ON data1.[0] = data2.[0] order by col002 desc`|sql query text|
+|Option3|`AlaSqlRes1`|the holder for output data: `CCC_REM[Option3].data = sqlResult;`|
+
+### runCol1AlaSql_
+
+Uses this [alasqlgs](https://github.com/contributorpw/alasqlgs) library.
+
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`data1~data2`|datasets aliases delimited by `~`|
+|Option2|`SELECT data1.Col1 col000, data1.Col2 col001, data1.Col3 col002, data1.Col1 col010, data2.Col2 col011 FROM ? AS data1 JOIN ? AS data2 ON data1.Col1 = data2.Col1 order by col002 desc`|sql query text, using Col1-notation|
+|Option3|`AlaSqlRes1`|the holder for output data: `CCC_REM[Option3].data = sqlResult;`|
+
+
 ----
 
 ## Archive samples (will migrate to Jobs):
@@ -266,12 +291,3 @@ Send custom emails
 ## Lisense
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-<a name="overview"></a>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0MTA3MzQzMiw0NzU2NzAxMjIsNTQ5MT
-czNjk3LC0xMTk2MTkwNjU1LC0xODQ4MzAwNzY0LDcwMTM5ODg3
-NiwyMTE2MTUxOTYyLC0xMTA2MDAyODMxLDE3NTEzMjA4NDQsLT
-gzMTExMTIzOCwtMTUzOTY2MDg3OSwyNTczOTUwNTUsMTk2OTI4
-NzExLDE4ODAxNzE5NzksMzQwMzAzMjQ5LC04NzgxMTE0LC0xMj
-U0NTExMDk4LDEwMDUzMTczMDAsLTMxMTAxNjgyM119
--->
