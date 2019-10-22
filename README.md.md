@@ -240,9 +240,9 @@ Uses this [alasqlgs](https://github.com/contributorpw/alasqlgs) library.
 
 |Column|Sample Value|Description|
 |--|--|--|
-|Option1|`data_mastrer`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1].data;`|
-|Option2|`data_Smith`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2].data = data_out;`|
-|Option3|`Col3~Smith`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+|Option1|`data1~data2`|datasets aliases delimited by `~`|
+|Option2|`SELECT data1.[0] col000, data1.[1] col001, data1.[2] col002, data1.[3] col003, data1.[4] col004, data1.[5] col005, data1.[6] col006, data1.[7] col007, data1.[8] col008, data1.[9] col009, data1.[10] col010, data2.[0], data2.[1], data2.[2], data2.[3], data2.[4], data2.[5], data2.[6], data2.[7], data2.[8], data2.[9] FROM ? AS data1 JOIN ? AS data2 ON data1.[0] = data2.[0] order by col002 desc`|sql query text|
+|Option3|`AlaSqlRes1`|the holder for output data: |
 
 ----
 
@@ -281,5 +281,5 @@ Send custom emails
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ2ODMwODc0XX0=
+eyJoaXN0b3J5IjpbMTYxODI0NjA2M119
 -->
