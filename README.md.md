@@ -150,8 +150,8 @@ Full list of Jobs functions
 |setColumnFilterCriteria_|Sets filter criteria by 1 column to existing filter.|[link](#setColumnFilterCriteria_)|
 |copyRange_|Copy entire range: values, formatting, validation rules, images, checkboxes|[link](#copyRange_)|
 |copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
-|copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
-|copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
+|runPureAlaSql_|Modify data with Ala-Sql|[link](#runPureAlaSql_)|
+|runCol1AlaSql_|Modify data with Ala-Sql|[link](#runCol1AlaSql_)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -233,6 +233,17 @@ Creates a copy of Spreadsheets with settings.
 |--|--|--|
 |Option1|`data_Smith`|The key (name) of variable. The script will get values from memory: `var data = CCC_REM[Option1].range;`.|
 
+
+### runPureAlaSql_
+
+Uses this alasqlgs 
+
+|Column|Sample Value|Description|
+|--|--|--|
+|Option1|`data_mastrer`|The key (name) of variable. The script will get values from the memory: `var data_in = CCC_REM[Option1].data;`|
+|Option2|`data_Smith`|The key (name) of variable. The script will save filtered values to the memory: `CCC_REM[Option2].data = data_out;`|
+|Option3|`Col3~Smith`|2 parameters delimited by `~`: column to filter, value to leave. In this case, filter by column 3 where value = 'Smith'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ...|
+
 ----
 
 ## Archive samples (will migrate to Jobs):
@@ -270,5 +281,5 @@ Send custom emails
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0MDIwNzQ3NF19
+eyJoaXN0b3J5IjpbNDEyNjIxMjgzXX0=
 -->
