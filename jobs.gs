@@ -37,6 +37,7 @@ function run_JOBS_(s_tags)
     tag = all_tags[i];
     if (tags.indexOf(tag) > -1) {ids.push(all_ids[i]); }    
   }
+  if (ids.length === 0) { return -2; } // no tasks found
   var s_ids = ids.join(d);  
   var res = runJOBS_(s_ids);
   Logger.log(res);
@@ -234,7 +235,7 @@ function writeValues_(options)
         clearData: false 
       };
       
-  writeDataToSheet_(writer);
+  return writeDataToSheet_(writer);
 
   return 0;  
 }
@@ -533,7 +534,6 @@ var datediffnum_ =  function(numdate1, numdate2)
   
   var difference = date2 - date1; 
   var res = Math.floor(difference / (1000*60*60*24));
-  Logger.log([numdate1, numdate2, date1, date2, difference, res].join(', '));
   return res;
 }
 
@@ -820,12 +820,15 @@ function writeDataToSheet_(writer)
   var row = writer.row || 1;
   var column = writer.column || 1;
   var isFreeRow = writer.isFreeRow;
-  var clearData = writer.clearData;  
-  
+  var clearData = writer.clearData;
+ 
   // get sheet
   if (fileId) { file = SpreadsheetApp.openById(fileId); }
   if (sheetName) { sheet = file.getSheetByName(sheetName); }
-  if (!sheet) { return -1; }
+  if (!sheet) { return -1; } // no sheet
+  
+  if (!data) { return -2; } // no data
+  if (!data[0]) { return -1; } // no data rows
   
   // get row
   if (isFreeRow)
@@ -844,7 +847,7 @@ function writeDataToSheet_(writer)
   {
    // clear old data if needed
     var last = sheet.getMaxRows();    
-    var rowsDel = last - row + 1;
+    var rowsDel = last - row + 1;    
     var colsDel = data[0].length;
     var r = sheet.getRange(row, column, rowsDel, colsDel);
     Logger.log('Cleared. Range: [' +  r.getA1Notation() + '], Sheet: [' + sheet.getName() + '], Data: [[' + data[0].join(', ') + '], ...]');
