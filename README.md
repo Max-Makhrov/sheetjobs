@@ -153,7 +153,7 @@ Full list of Jobs functions
 |copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
 |runPureAlaSql_|Modify data with Ala-Sql|[link](#runPureAlaSql_)|
 |runCol1AlaSql_|Modify data with Ala-Sql|[link](#runCol1AlaSql_)|
-|Ala-Sql-More...|Extanded functions for working with dates using Ala-Sql|[link](#AlaSql-More...)|
+|Ala-Sql-More...|Extanded functions for working with dates using Ala-Sql|[link](#AlaSqlMore...)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -257,7 +257,7 @@ Uses this [alasqlgs](https://github.com/contributorpw/alasqlgs) library.
 |Option3|`AlaSqlRes1`|the holder for output data: `CCC_REM[Option3].data = sqlResult;`|
 
 
-### AlaSql More...
+### AlaSqlMore...
 
 Note: in Ala-Sql functions are used without trailing undercope `date2num_  → date2num`
 
