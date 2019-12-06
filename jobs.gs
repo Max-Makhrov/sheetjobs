@@ -14,7 +14,7 @@ function test_Jobs()
   //   Create Report    = create a copy of the given report-template
   //   Fill Report      = fill the report with the portion of filtered data
   //   -----------------------------------------------------------------------------------------
-  run_JOBS_('Ala-Sql test');    
+  run_JOBS_('join sheets');    
 }
 
 
@@ -486,6 +486,78 @@ function copyRange_(options)
   return 0;    
 }
 
+//
+//   _____                              _                 
+//  / ____|                            (_)                
+// | |     ___  _ ____   _____ _ __ ___ _  ___  _ __  ___ 
+// | |    / _ \| '_ \ \ / / _ \ '__/ __| |/ _ \| '_ \/ __|
+// | |___| (_) | | | \ V /  __/ |  \__ \ | (_) | | | \__ \
+//  \_____\___/|_| |_|\_/ \___|_|  |___/_|\___/|_| |_|___/
+//                                                        
+//
+//function test_ma()
+//{
+//  Logger.log('' + Math.max('20191001', '20191030'));
+//  
+//}
+var date2num_ = function(date)
+{
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+            year = d.getFullYear();    
+    if (month.length < 2) 
+      month = '0' + month;
+    if (day.length < 2) 
+      day = '0' + day;   
+    var str = [year, month, day].join('');
+    return parseInt(str);      
+}
+var dayaddnum_ = function(numdate, num)
+  {
+    if (!numdate) { return undefined; }
+    var s = '' + numdate;
+    // var num = -1; // minus 1 day
+    var y = parseInt(s.substring(0,4), 10);
+    var m = parseInt(s.substring(4,6), 10) - 1; // months are 0-based
+    var d = parseInt(s.substring(6,8), 10);
+    d += num;  
+    
+    var res = new Date(y, m, d); // date
+    return date2num_(res); // num 
+  };
+var datediffnum_ =  function(numdate1, numdate2)
+{
+  var date1 = num2date_(numdate1);
+  var date2 = num2date_(numdate2);
+  
+  var difference = date2 - date1; 
+  var res = Math.floor(difference / (1000*60*60*24));
+  Logger.log([numdate1, numdate2, date1, date2, difference, res].join(', '));
+  return res;
+}
+
+var num2date_ = function(numdate)
+{
+  var s = '' + numdate;
+  var y = parseInt(s.substring(0,4), 10);
+  var m = parseInt(s.substring(4,6), 10) - 1; // months are 0-based
+  var d = parseInt(s.substring(6,8), 10);  
+  var res = new Date(y, m, d); // date
+  return res;
+}
+
+
+
+//
+//           _        _____       _ 
+//     /\   | |      / ____|     | |
+//    /  \  | | __ _| (___   __ _| |
+//   / /\ \ | |/ _` |\___ \ / _` | |
+//  / ____ \| | (_| |____) | (_| | |
+// /_/    \_\_|\__,_|_____/ \__, |_|
+//                             | |  
+//                             |_|  
 function runPureAlaSql_(options)
 {
   return runAlaSql_(options);  
@@ -496,7 +568,6 @@ function runCol1AlaSql_(options)
   options.convertFromCol1 = true;
   return runAlaSql_(options);  
 }
-
 function runAlaSql_(options)
 {
   // TODO:
@@ -506,6 +577,11 @@ function runAlaSql_(options)
   //    4. if dataset has 1 data, replace * with cols.
 
   var alasql = AlaSQLGS.load();
+  alasql.fn.dayaddnum = dayaddnum_; 
+  alasql.fn.date2num = date2num_;     
+  alasql.fn.datediffnum = datediffnum_;
+  alasql.fn.num2date = num2date_;
+
   // to convert the result into 2D-array
   alasql.options.modifier = 'MATRIX'; // https://github.com/agershun/alasql/wiki/MATRIX
   // to get results from 2 tables with 'select *...'
@@ -546,8 +622,6 @@ function runAlaSql_(options)
   return 0;  
   
 }
-
-
 function convertCol1ToAlaSql_(string)
 {
   var result = string.replace(/(Col)(\d+) *?/g, "[$2]");
