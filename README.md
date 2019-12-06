@@ -1,5 +1,6 @@
 
 
+
 # Jobs
 <p align="left">
     <a href="https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy" alt="Copy Sample Google Spreadsheet File">
@@ -152,6 +153,7 @@ Full list of Jobs functions
 |copyRangeContents_|Copy range contents. Will also copy images|[link](#copyRangeContents_)|
 |runPureAlaSql_|Modify data with Ala-Sql|[link](#runPureAlaSql_)|
 |runCol1AlaSql_|Modify data with Ala-Sql|[link](#runCol1AlaSql_)|
+|Ala-Sql-More...|Extanded functions for working with dates using Ala-Sql|[link](#Ala-Sql-More...)|
 
 ### rememberValues_
 |Column|Sample Value|Description|
@@ -255,6 +257,46 @@ Uses this [alasqlgs](https://github.com/contributorpw/alasqlgs) library.
 |Option3|`AlaSqlRes1`|the holder for output data: `CCC_REM[Option3].data = sqlResult;`|
 
 
+### Ala-Sql-More...
+
+Note: in Ala-Sql functions are used without trailing undercope `date2num_  → date2num`
+
+data2Num
+
+    date2num_ = function(date)
+    // usage:
+    select data2Num(Col1) from ?
+    // result:
+    converts date to a number in format YYYMMDD
+    date '2019-06-12' → 20190612
+
+dayaddnum
+
+    dayaddnum_ = function(numdate, num)
+    // usage:
+    select dayaddnum(Col1, -1) from ?
+    // result 
+    adds days to the initial date-number
+    dayaddnum(20190612, -1) → 20190611
+
+datediffnum
+
+    datediffnum_ =  function(numdate1, numdate2)
+    // usage:
+    select datediffnum(Col1, Col2) from ?
+    // result:
+    get difference in days between 2 date-numbers
+    datediffnum(20190612, 20190611) → 1
+
+num2date
+
+    num2date_ = function(numdate)
+    // usage:
+    select num2date(Col1) from ?
+    // result:
+    convert date-number to date
+    num2date(20190612) → date '2019-06-12'
+
 ----
 
 ## Archive samples (will migrate to Jobs):
@@ -291,7 +333,3 @@ Send custom emails
 ## Lisense
 <a name="top"></a>
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-<a name="overview"></a>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzg0OTIxNjZdfQ==
--->
