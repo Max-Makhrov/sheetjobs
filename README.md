@@ -46,12 +46,6 @@ New functions will appear in Jobs as native bound functions, or will be added as
 
 Jobs has a flexible system of selecting ranges in Google Sheets. A range is the smallest part of Spreasheet object model. Having a range, the script will find all parent objects from it if needed.
 
-More info about Jobs:
-
-1.  [How to use Jobs](https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/)
-2.  [General info](https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/)
-3.  [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about the file [Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
-
 ## Jobs structure
 
 Jobs is a Google Spreadhsheet file. The file contains of 3 sheets:
@@ -84,28 +78,28 @@ Notes:
 | Column | Description | Default |
 | --- | --- | --- |
 | Task Id | The _unique_ ID of a task. Use numbers `1, 2, 3`. Textual format of ids is also possible: `1a, 1b, my task`. CAUTION: use unique IDs only! 2 tasks with the same ID will run simultanously, which may cause errors. | \- |
-| File Id | 
-Get file id from the browser URL: 
+| File Id |   |   |
+| Get file id from the browser URL: |   |   |
 
 ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_fileid.png?w=676)
 
 Or get file id from the script using [`File.GetId()`](https://developers.google.com/apps-script/reference/drive/file#getid) method.
 
- | The file where whe script was executed: `SpreadsheetApp.getActive()` |
-| Sheet Name | Sheet names are unique and being used instead of ids for user convenience | The left-most sheet in a file: `File.getSheets[0]` |
-| Range-A1 | 
+| The file where whe script was executed: `SpreadsheetApp.getActive()` |  
+| Sheet Name | Sheet names are unique and being used instead of ids for user convenience | The left-most sheet in a file: `File.getSheets[0]` |  
+| Range-A1 |
 
- A range address in A1-Notation:
+A range address in A1-Notation:
 
 `A1`
 
 `A1:C5`
 
- | A range with data: `sheet.getDataRange()` |
-| Range Type | Select between options: `range only`, `range and rows behind`, `range up to the end of sheet`, `first free row` | |  `range only` |
-| Operation  | The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs. | \- |
-| Option1, Option2, Option3 | Contains any text depending on the script settings. | \- |
-| Tag  | The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag. | \- |
+| A range with data: `sheet.getDataRange()` |  
+| Range Type | Select between options: `range only`, `range and rows behind`, `range up to the end of sheet`, `first free row` | | `range only` |  
+| Operation | The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs. | - |  
+| Option1, Option2, Option3 | Contains any text depending on the script settings. | - |  
+| Tag | The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag. | - |
 
 ## Jobs Script
 
@@ -332,6 +326,12 @@ num2date(20190612) → date '2019-06-12'
 ```
 
 ---
+
+More info about Jobs:
+
+1.  [How to use Jobs](https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/)
+2.  [General info](https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/)
+3.  [How I store variables](https://sheetswithmaxmakhrov.wordpress.com/2018/12/18/sheetjobs-how-i-store-variables-for-my-projects/) — about the file [Const.gs](https://github.com/Max-Makhrov/sheetjobs/blob/master/const_.gs)
 
 ## Archive samples (will migrate to Jobs):
 
