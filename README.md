@@ -81,7 +81,7 @@ Notes:
 
 ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_fileid.png?w=676)
 
-Or get file id from the script using [`File.GetId()`](https://developers.google.com/apps-script/reference/drive/file#getid) method. Default is the file where whe script was executed: `SpreadsheetApp.getActive()` 
+Or get file id from the script using [`File.GetId()`](https://developers.google.com/apps-script/reference/drive/file#getid) method. Default is the file where whe script was executed: `SpreadsheetApp.getActive()`
 
 **Sheet Name.** Sheet names are unique and being used instead of ids for user convenience Default is the left-most sheet in a file: `File.getSheets[0]`
 
@@ -103,7 +103,7 @@ The basic usage is to run this code:
 
 ```
 // Change tag /tags and run the function
-// To run more then 1 tag, use semicolon as a delimeter: Clear Ranges;Log Values
+// To run more then 1 tag, use · as a delimeter: Clear Ranges·Log Values
 function test_Jobs()
 {
   // Test Tags:
