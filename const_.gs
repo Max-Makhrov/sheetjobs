@@ -1,10 +1,17 @@
-// sample files are here: https://drive.google.com/drive/folders/1U4GrMHHyakOoCG3PVehkQD_AKADvFdVL
+var C_FILE_TRIGGER_ID = '';  // Put your file id here if you plan to use this file as Library
+                             // Note: you don't need to do it if you use the standalone script
 
-var C_FILE_TRIGGER_ID = '';  // Put your file id here if you plan to use it as Library
-var C_SHEET_EVAL = '_Ini_';
+// Info
+//     This file is for reading user variables
+//     All variables are stored on sheet _ini_
+var C_SHEET_EVAL = '_Ini_';  
+//     Variables are in range C2:D
 var C_RANGE_VALS = 'C2:D';
-var CCC_ = {}; // for holding constants
+//     Delimiter 1 is always called STR_DELIMEER1
 var C_DELIMETER1_NAME = 'STR_DELIMEER1';
+//     The script holds all cashe in object CCC_
+var CCC_ = {}; // for holding constants
+
 
 // get settings from named range
 function getSettings_(getAgain)
