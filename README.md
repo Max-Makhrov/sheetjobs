@@ -66,8 +66,7 @@ Jobs is a Google Spreadhsheet file. The file contains of 3 sheets:
 
 ## Settings Jobs
 
-All settings are in the sheet \_Jobs\_:  
- 
+All settings are in the sheet \_Jobs\_:
 
 ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_allsets-1.png?w=676)
 
@@ -82,9 +81,9 @@ Notes:
     *   Some settings are the  
         same for all tasks (see the _basic_ type in column |Type|).
 
-| Column | Description | Type | Default |
-| --- | --- | --- | --- |
-| Task Id | The _unique_ ID of a task. Use numbers `1, 2, 3`. Textual format of ids is also possible: `1a, 1b, my task`. CAUTION: use unique IDs only! 2 tasks with the same ID will run simultanously, which may cause errors. | basic[1](#f1) | \- |
+| Column | Description | Default |
+| --- | --- | --- |
+| Task Id | The _unique_ ID of a task. Use numbers `1, 2, 3`. Textual format of ids is also possible: `1a, 1b, my task`. CAUTION: use unique IDs only! 2 tasks with the same ID will run simultanously, which may cause errors. | \- |
 | File Id | 
 Get file id from the browser URL: 
 
@@ -92,17 +91,21 @@ Get file id from the browser URL:
 
 Or get file id from the script using [`File.GetId()`](https://developers.google.com/apps-script/reference/drive/file#getid) method.
 
- | basic | The file where whe script was executed: [`SpreadsheetApp.getActive()`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#getActive%28%29) |
-| Sheet Name | The name of a sheet. | basic | The left-most sheet in a file: [`File.getSheets[0]`](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#getsheets). |
-| Range-A1 | A range address in A1-Notation | basic | A range with data: [`sheet.getDataRange()`](https://developers.google.com/apps-script/reference/spreadsheet/sheet#getdatarange) |
-| Range Type | Select between options: `range only`, `range and rows behind`, `range up to the end of sheet`, `first free row` | basic | `range only` |
-| Operation | The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs. | special[2](#f2) | \- |
-| Option1, Option2, Option3 | Contains any text depending on the script settings. | special | \- |
-| Tag | The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag. | basic | \- |
+ | The file where whe script was executed: `SpreadsheetApp.getActive()` |
+| Sheet Name | Sheet names are unique and being used instead of ids for user convenience | The left-most sheet in a file: `File.getSheets[0]` |
+| Range-A1 | 
 
-1\. _basic_ options are the same for all tasks. [↩](#a1)
+ A range address in A1-Notation:
 
-2\. _special_ options differs for different tasks. [↩](#a2)
+`A1`
+
+`A1:C5`
+
+ | A range with data: `sheet.getDataRange()` |
+| Range Type | Select between options: `range only`, `range and rows behind`, `range up to the end of sheet`, `first free row` | |  `range only` |
+| Operation  | The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs. | \- |
+| Option1, Option2, Option3 | Contains any text depending on the script settings. | \- |
+| Tag  | The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag. | \- |
 
 ## Jobs Script
 
@@ -363,8 +366,5 @@ Create custom reports. Copy own template, rename it, set it to show different da
 Send custom emails
 
 ## Lisense
-
-  
- 
 
 ![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)
