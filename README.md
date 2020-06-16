@@ -77,9 +77,7 @@ Notes:
 
 **Task Id.** The _unique_ ID of a task. Use numbers `1, 2, 3`. Textual format of ids is also possible: `1a, 1b, my task`. CAUTION: use unique IDs only! 2 tasks with the same ID will run simultanously, which may cause errors.
 
-**File Id.** 
-
-Copy from file URL:
+**File Id.** Copy from file URL:
 
 ![enter image description here](https://sheetswithmaxmakhrov.files.wordpress.com/2019/09/jobs_fileid.png?w=676)
 
@@ -87,16 +85,15 @@ Or get file id from the script using [`File.GetId()`](https://developers.google.
 
 Default is the file where whe script was executed: `SpreadsheetApp.getActive()` |
 
-**Sheet Name.** Sheet names are unique and being used instead of ids for user convenience Default is the left-most sheet in a file: `File.getSheets[0]` |
+**Sheet Name.** Sheet names are unique and being used instead of ids for user convenience Default is the left-most sheet in a file: `File.getSheets[0]` |
 
-**Range-A1.** A range address in A1-Notation: `A1`, `A1:C5`. Default is range with data: `sheet.getDataRange()` 
+**Range-A1.** A range address in A1-Notation: `A1`, `A1:C5`. Default is range with data: `sheet.getDataRange()`
 
-**Range Type.** Select between options: `range only` (default), `range and rows behind`, `range up to the end of sheet`, `first free row` 
+**Range Type.** Select between options: `range only` (default), `range and rows behind`, `range up to the end of sheet`, `first free row`
 
 **Operation.** The name of a function to run. You may use [Jobs functions](#jobs-functions) or develop new functions for your needs.
 
-**Option1, Option2, Option3.** Contains any text depending on the script settings.  
- 
+**Option1, Option2, Option3.** Contains any text depending on the script settings.
 
 **Tag.** The name of a group of tasks. Use it to easily run multiple tasks with one line of code: `run_JOBS_('Clear Ranges');` where `Clear Ranges` is your custom tag.
 
