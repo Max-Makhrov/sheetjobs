@@ -2,7 +2,7 @@
 
 Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
 
-![enter image description here](https://raw.githubusercontent.com/Max-Makhrov/timestamps/master/pics/scheme%2001.png)
+![enter image description here](https://raw.githubusercontent.com/Max-Makhrov/timestamps/master/pics/timestamps_teaser%2005.gif)
 # Files
 
 StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
@@ -142,5 +142,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTc0OTUzNzFdfQ==
+eyJoaXN0b3J5IjpbODQ0NTU4Mzc5LC0yMDE3NDk1MzcxXX0=
 -->
