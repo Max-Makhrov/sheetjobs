@@ -1,10 +1,10 @@
 # Jobs
 
-[https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy](copy-sample)
+[Copy sample](https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy)
 
-[https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/](article-about)
+[About](https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/)
 
-[https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/](article-usage)
+[Usage](https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/)
 
 Jobs is a Goole Spreadsheet with the script for automating tasks.
 
@@ -220,7 +220,7 @@ Creates a copy of Spreadsheets with settings.
 
 | Column | Sample Value | Description |
 | --- | --- | --- |
-| Option1 | `Col2~` | 2 parameters delimited by `~`: column-to-filter**~**value-to-hide. In this case, hide rows where column 2 value = '' (empty). Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ... |
+| Option1 | `Col2~` | 2 parameters delimited by `~`: column-to-filter\*\*~\*\*value-to-hide. In this case, hide rows where column 2 value = '' (empty). Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ... |
 | Option2 | `myVar` | The key (name) of variable. The script will save data values to memory: `CCC_REM[Option2].data = data;` |
 
 ### createPDF\_
@@ -234,14 +234,14 @@ Creates a copy of Spreadsheets with settings.
 
 | Column | Sample Value | Description |
 | --- | --- | --- |
-| Option1 | `Col2~delete` | 2 parameters delimited by `~`: column-to-filter**~**value-to-hide. In this case, hide rows where column 2 value = 'delete'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ... |
+| Option1 | `Col2~delete` | 2 parameters delimited by `~`: column-to-filter\*\*~\*\*value-to-hide. In this case, hide rows where column 2 value = 'delete'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ... |
 | Option2 | `all-rows` | The key (name) of variable. The script will save the initial range data values to memory: `CCC_REM[Option2].data = dataIn;` |
 
 ### setColumnFilterCriteria\_
 
 | Column | Sample Value | Description |
 | --- | --- | --- |
-| Option1 | `Col2~East` | 2 parameters delimited by `~`: column-to-filter**~**value-to-hide. In this case, leave rows where column 2 value = 'East'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ... |
+| Option1 | `Col2~East` | 2 parameters delimited by `~`: column-to-filter\*\*~\*\*value-to-hide. In this case, leave rows where column 2 value = 'East'. Columns are counted from left to rigth, the first column has index = 1: Col1, Col2, Col3, ... |
 
 ### copyRange\_
 
