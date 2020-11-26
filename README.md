@@ -1,10 +1,10 @@
 # Jobs
 
-![https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy](https://img.shields.io/badge/copy-sample%20file-green)
+![https://docs.google.com/spreadsheets/d/1-uutvWRg2zQYM-M5XW9awGpZc_uXiCXSG5eelkLErzk/copy](copy-sample)
 
-![https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/](https://img.shields.io/badge/article-about-brightgreen)
+![https://sheetswithmaxmakhrov.wordpress.com/2019/09/02/jobs/](article-about)
 
-![https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/](https://img.shields.io/badge/article-usage-brightgreen)
+![https://sheetswithmaxmakhrov.wordpress.com/2019/09/05/clear-my-ranges-jobs-%f0%9f%94%a5/](article-usage)
 
 Jobs is a Goole Spreadsheet with the script for automating tasks.
 
