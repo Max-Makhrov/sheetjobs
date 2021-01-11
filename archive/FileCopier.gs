@@ -1,96 +1,299 @@
-// file sample is here: https://drive.google.com/drive/folders/1w3u2oO07xMCm5t89al73uSaeQ66hJ-oU
-function test_fileCopier()
+// file sample is here: https://drive.google.com/drive/folders/1VUMybAKp_qKcIj4yLvyMb9Jtz0-uJxpY
+function test_SheetsCopier()
 {
   var t = new Date();
-  var ids = false; // use "1;2;3" to copy certain task ids 
-  var res = copyFiles_(ids);
+  var ids = false; // use "1;2;3" to copy certain task ids (false = all)
+  var res = copySheetByTaskIds_(ids);
   Logger.log(res);
   Logger.log('Time to run the script = ' + (new Date() -t) + ' ms.');
 }
 
 
-function copyFiles_(ids) {
+var C_RESTORING_FORMULAS = {}; // object to keep info for restoring formulas
+
+function copySheetByTaskIds_(ids)
+{ 
   getSettings_();
-  var d = CCC_.STR_DELIMEER1;
-  var all_ids = CCC_.STR_TASKID_FILECOPIER.split(d);
-  var all_fileIds = CCC_.STR_FILE_ID_FILECOPIER.split(d);
-  var all_folderIds = CCC_.STR_FOLDER_TO_ID_FILECOPIER.split(d);
-  var all_prefix = CCC_.STR_NAME_PREFIX_FILECOPIER.split(d);
-  var all_postfix = CCC_.STR_NAME_POSTFIX_FILECOPIER.split(d);
+  var d1 = CCC_.STR_DELIMEER1;
+  var d2 = CCC_.STR_DELIMEER2;
+  var allIds = CCC_.STR_ID_SHEETSCOPIER.split(d2);
+  var allFileIdsFrom = CCC_.STR_FROM_SHEETSCOPIER.split(d2);
+  var allSheetNamesFrom = CCC_.STR_COPYSHEET_SHEETSCOPIER.split(d2);
+  var allFileIdsTo = CCC_.STR_TO_SHEETSCOPIER.split(d2);
+  var allSheetNamesTo = CCC_.STR_PASTESHEET_SHEETSCOPIER.split(d2);
+  var allReplaceSheet = CCC_.STR_REPLACESHEET_SHEETSCOPIER.split(d2);
   
+  if (!ids) { var selectedIds = allIds; }
+  else { var selectedIds = ids.split(d1); }
   
-  if (!ids) { ids = all_ids; }
-  else { ids = ids.split(d); }
-  
-  var res = [];
-  for (var i = 0; i < all_ids.length; i++)
+  var result = [];
+  for (var i = 0; i < selectedIds.length; i++)
   {
-    var id = all_ids[i];
-    if (ids.indexOf(id) > -1)
-    {
-      var fileCopier = 
-          {
-            fileId: all_fileIds[i],
-            folderId: all_folderIds[i],
-            prefix: all_prefix[i],
-            postfix: all_postfix[i]
-          }
-      var subRes = copyFile_(fileCopier);
-      res.push(subRes);
-    }    
+    var index = allIds.indexOf(selectedIds[i]);
+    var copier = 
+        {
+          fileIdFrom: allFileIdsFrom[index],
+          fileIdTo: allFileIdsTo[index],
+          sheetName: allSheetNamesFrom[index],
+          sheetNewName: allSheetNamesTo[index],
+          replaceExisting: allReplaceSheet[index]
+        };
+    result.push(copySheet_(copier));
   }
-  return res;
+  // restore formulas before exit
+  restoreFormulas_()
+  return result;
 }
 
 
-function copyFile_(fileCopier)
+function copySheet_(copier)
 {
-  var fileId = fileCopier.fileId, 
-      folderId = fileCopier.folderId, 
-      prefix = fileCopier.prefix, 
-      postfix = fileCopier.postfix;
+  var fileIdFrom = copier.fileIdFrom;
+  var fileIdTo = copier.fileIdTo;
+  var sheetName = copier.sheetName;
+  var sheetNewName = copier.sheetNewName;
+  if (sheetNewName === '') { sheetNewName = sheetName; }
+  var replaceExisting = copier.replaceExisting; 
   
-  var file = DriveApp.getFileById(fileId);
-  if (!file) { return -1; } // no file
-  var type = file.getMimeType();
-  var folder = DriveApp.getFolderById(folderId);
-  if (!folder) { return -2; } // no folder
-  var name = file.getName();
+  var fileTo = SpreadsheetApp.openById(fileIdTo);
   
-  switch (type) {
-    case MimeType.GOOGLE_SHEETS:
-      // copy the form too
-      var copy = file.makeCopy(folder);
-      var copyId = copy.getId();
-      var ss = SpreadsheetApp.openById(copyId); // get file of a copy
-      if (!ss) { return -3; } // no ss??
-      var formUrl = ss.getFormUrl();
-      if (formUrl)
-      {
-        var form = FormApp.openByUrl(formUrl);
-        var formId = form.getId();
-        var formFile = DriveApp.getFileById(formId);
-        // get folders from form copy
-        var fileParents = formFile.getParents();
-        // add to folder
-        folder.addFile(formFile); 
-        // remove old copies        
-        while ( fileParents.hasNext() ) {
-          var folderFrom = fileParents.next();
-          folderFrom.removeFile(formFile);
-        }
-        // rename file copy
-        formFile.setName(prefix + name + postfix);        
-      }
-      break;
-    case MimeType.GOOGLE_FORMS:
-      // do not copy the form
-      return -4; // userforms are copied automatically with linked spreadsheet
-    default:
-      // copy as usual
-      var copy = file.makeCopy(folder);
+  // check if sheet was already there
+  var sheetCurrent = fileTo.getSheetByName(sheetNewName);  
+  // do not copy, do not re-write current sheet   
+  if (sheetCurrent && replaceExisting != '1')  { return -1; } // sheet exists
+  if (sheetCurrent) {  deleteSheetAndNamedRanges_(sheetCurrent); } // delete (!) current sheet with the same name
+  
+  // get used names of ranges
+  var usedNames = getUsedNames_(fileTo);  
+    
+  // copy sheet
+  var fileFrom = SpreadsheetApp.openById(fileIdFrom);
+  var sheetFrom = fileFrom.getSheetByName(sheetName);  
+  var newSheet = sheetFrom.copyTo(fileTo);
+  
+  // hidden
+  newSheet.showSheet(); // unhide new created sheet so user can see the result
+    
+  // rename
+  newSheet.setName(sheetNewName);
+  
+  // recreate named ranges
+  recreateNamedRanges_(newSheet, sheetFrom, usedNames);
+  
+  // protected sheet, ranges
+  copySheetProtection_(sheetFrom, newSheet);
+  
+  // formulas => remember source sheet formulas
+  addToRestoringFormulas_(fileFrom, newSheet, sheetFrom); // adds info for restoring all the formulas
+   
+  // notes are copied automatically  
+  // comments are not supported (2019/04)
+
+  return 0;
+}
+
+
+
+
+/////////////////// named ranges
+function getUsedNames_(file)
+{
+  var usedNamedRanges = file.getNamedRanges();
+  var getNames_ = function (namedRange) { return namedRange.getName(); }  
+  return usedNamedRanges.map(getNames_);  
+}
+
+function recreateNamedRanges_(sheetTo, sheetFrom, usedNames)
+{
+  var namedRangesSheetNew = sheetTo.getNamedRanges();
+  var namedRangesSheet = sheetFrom.getNamedRanges();  
+  var fileTo = sheetTo.getParent();
+  
+  // read named ranges from sheet1
+  var oNamedRanges = {};
+  namedRangesSheet.forEach
+  (function(elt, index)
+  {
+    var name = elt.getName();
+    if (usedNames.indexOf(name) === -1)
+    {
+      var namedRangeNew = namedRangesSheetNew[index];
+      
+      if (!namedRangeNew) { return -1; } // smth went wrong =(
+      
+      // remember
+      oNamedRanges[name] = {};
+      oNamedRanges[name].place = namedRangeNew.getRange().getA1Notation();
+      oNamedRanges[name].range = namedRangeNew;
+    }    
+  });
+  
+  // delete and recreate
+  for (var name in oNamedRanges)
+  {
+    oNamedRanges[name].range.remove();
+    fileTo.setNamedRange(name, sheetTo.getRange(oNamedRanges[name].place));    
+  }  
+  
+  return 0;
+  
+}
+
+function deleteSheetAndNamedRanges_(sheet)
+{  
+  // remember named ranges
+  var namedRanges = sheet.getNamedRanges();
+  
+  // delete sheet
+  sheet.getParent().deleteSheet(sheet);
+  
+  var delete_ = function(elt) { elt.remove(); }
+  
+  namedRanges.forEach(delete_);
+  
+  return 0;
+    
+}
+
+
+
+
+/////////////////// protections
+function copySheetProtection_(sheetFrom, sheetTo)
+{
+  
+  //  getProtections(SHEET) 
+  var sheetProtections = sheetFrom.getProtections(SpreadsheetApp.ProtectionType.SHEET)
+  var l = sheetProtections.length;
+  for (var i = 0; i < l; i++)
+  {
+    var sheetProtection = sheetProtections[i];
+    var description = sheetProtection.getDescription();
+    var editors = sheetProtection.getEditors();
+    var isWarningOnly = sheetProtection.isWarningOnly();
+    var unprotectedRanges = sheetProtection.getUnprotectedRanges();    
+    // add new sheet protection    
+    try {
+      var protection = sheetTo.protect().setDescription(description); // try set description    
+    }
+    catch(err) {
+      Logger.log(err); // see the error text for further debugging
+      var protection = sheetTo.protect().setDescription(sheetTo.getName()); // try set description = sheet name
+    }
+    
+    if (isWarningOnly)
+    {
+      protection.setWarningOnly(true);      
+    }
+    else
+    {
+      // Ensure the current user is an editor before removing others. Otherwise, if the user's edit
+      // permission comes from a group, the script throws an exception upon removing the group.
+      var me = Session.getEffectiveUser();
+      protection.addEditor(me);
+      protection.removeEditors(protection.getEditors());
+      if (protection.canDomainEdit()) {
+        protection.setDomainEdit(false);    
+      }    
+      protection.addEditors(editors);               
+    }
+    protection.setUnprotectedRanges(unprotectedRanges);        
   }
-  // rename copy
-  copy.setName(prefix + name + postfix);
-  return 0; 
+
+  //  getProtections(RANGE) 
+  var rangeProtections = sheetFrom.getProtections(SpreadsheetApp.ProtectionType.RANGE)
+  var l = rangeProtections.length;
+  for (var i = 0; i < l; i++)
+  {
+    var rangeProtection = rangeProtections[i];
+    var description = rangeProtection.getDescription();
+    var editors = rangeProtection.getEditors();
+    var isWarningOnly = rangeProtection.isWarningOnly();  
+    var range = sheetTo.getRange(rangeProtection.getRange().getA1Notation());
+    // add new sheet protection
+    var protection = range.protect().setDescription(description);        
+    if (isWarningOnly)
+    {
+      protection.setWarningOnly(true);      
+    }
+    else
+    {
+      // Ensure the current user is an editor before removing others. Otherwise, if the user's edit
+      // permission comes from a group, the script throws an exception upon removing the group.
+      var me = Session.getEffectiveUser();
+      protection.addEditor(me);
+      protection.removeEditors(protection.getEditors());
+      if (protection.canDomainEdit()) {
+        protection.setDomainEdit(false);    
+      }    
+      protection.addEditors(editors);               
+    }        
+  }  
+  return 0;
+}
+
+
+
+
+/////////////////// formulas
+function addToRestoringFormulas_(fileFrom, sheetTo, sheetFrom)
+{
+  var key = fileFrom.getId();
+  
+  if (!(key in C_RESTORING_FORMULAS))
+  {
+    var node = {};
+    node.sheets = [sheetTo];
+    node.sheetsFrom = [sheetFrom];
+    node.namedRanges = getUsedNames_(fileFrom);
+    C_RESTORING_FORMULAS[key] = node;    
+  }
+  else
+  {
+    node =  C_RESTORING_FORMULAS[key];
+    node.sheets.push(sheetTo); 
+    node.sheetsFrom.push(sheetFrom)
+    C_RESTORING_FORMULAS[key] = node;
+  }
+  return 0;  
+}
+function restoreFormulas_()
+{ 
+  var obj = C_RESTORING_FORMULAS;
+  // loop files
+  for (var key in obj)
+  {
+    var sheets = obj[key].sheets;
+    var sheetsFrom = obj[key].sheetsFrom;
+    var namedRanges = obj[key].namedRanges;
+    var duckMatchPattern = new RegExp(namedRanges.join("|"), "i");
+    var ls = sheets.length;
+    // loop sheets
+    for (var i = 0; i < ls; i++)
+    {
+      var sheet = sheets[i];
+      var sheetFrom = sheetsFrom[i];
+      var range = sheetFrom.getDataRange();      
+      var formulas = range.getFormulas();   
+      var newRange = sheet.getDataRange();
+      var newFormulas = newRange.getFormulas(); 
+      var values = newRange.getDisplayValues();
+      
+      var ll = values[0].length;
+      // loop range values and formulas
+      for (var r = 0, l = values.length; r < l; r++)
+      {
+        for (var c = 0; c < ll; c++)
+        {
+          var value = values[r][c];
+          var formula = newFormulas[r][c];
+          var replaceFormula = formulas[r][c];                
+          // duck type bad formula
+          if ( (formula.match("!") || formula.match(duckMatchPattern) || formula.match('#REF!')) && (value === '#N/A' || value === '#REF!')) 
+          { sheet.getRange(r + 1, c + 1).setFormula(replaceFormula + ' '); } // resets the formula   
+        }    
+      }            
+    }        
+  }
+  return 0;
 }
